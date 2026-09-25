@@ -11,18 +11,37 @@ class AppEnvironment {
   final String apiBaseUrl;
   final bool enableApiLogs;
 
-  static const AppEnvironment current = AppEnvironment(
+  /// Built from `--dart-define` values. Not `const` because `_parseEnv`
+  /// cannot run inside a constant expression on newer Dart SDKs.
+  static final AppEnvironment current = AppEnvironment(
     env: _parseEnv(
-      String.fromEnvironment('APP_ENV', defaultValue: 'development'),
+      const String.fromEnvironment('APP_ENV', defaultValue: 'development'),
     ),
-    apiBaseUrl: String.fromEnvironment(
+    // Dev default is loopback HTTP (simulator). Production builds MUST pass
+    // --dart-define=API_BASE_URL=https://…/api/v1 (see dart_defines/).
+    apiBaseUrl: const String.fromEnvironment(
       'API_BASE_URL',
-      defaultValue: 'http://10.0.2.2:3000/api/v1',
+      defaultValue: 'http://127.0.0.1:3000/api/v1',
     ),
-    enableApiLogs: bool.fromEnvironment('ENABLE_API_LOGS', defaultValue: true),
+    enableApiLogs:
+        const bool.fromEnvironment('ENABLE_API_LOGS', defaultValue: false),
   );
 
   bool get isDev => env == AppEnv.development;
+  bool get isProduction => env == AppEnv.production;
+
+  /// Call at startup. Throws in production when API URL is not HTTPS.
+  void assertProductionSafe() {
+    if (!isProduction) return;
+    final uri = Uri.tryParse(apiBaseUrl);
+    if (uri == null || uri.scheme != 'https' || uri.host.isEmpty) {
+      throw StateError(
+        'Production builds require --dart-define=APP_ENV=production and '
+        '--dart-define=API_BASE_URL=https://<your-api-host>/api/v1. '
+        'Got: $apiBaseUrl',
+      );
+    }
+  }
 
   static AppEnv _parseEnv(String value) {
     switch (value.toLowerCase()) {

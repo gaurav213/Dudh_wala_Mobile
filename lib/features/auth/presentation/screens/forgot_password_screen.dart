@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../app/theme/app_theme.dart';
+import '../../../../l10n/app_localizations.dart';
 
 /// OTP reset is planned; this screen documents the future flow.
 class ForgotPasswordScreen extends StatelessWidget {
@@ -9,28 +10,31 @@ class ForgotPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.cream,
-      appBar: AppBar(title: const Text('Forgot password')),
+      backgroundColor: Dk.of(context).cream,
+      appBar: AppBar(title: Text(AppLocalizations.of(context).forgotPassword)),
       body: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'OTP password reset',
+              AppLocalizations.of(context).otpPasswordReset,
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 8),
             Text(
-              'SMS OTP verification will land in a later release. '
-              'For now, contact your Doodh Khata admin to reset access.',
+              AppLocalizations.of(context).smsOtpLaterRelease,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              AppLocalizations.of(context).contactAdminResetAccess,
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium
-                  ?.copyWith(color: AppColors.muted),
+                  ?.copyWith(color: Dk.of(context).muted),
             ),
             const SizedBox(height: 24),
-            const Chip(label: Text('Future: OTP via SMS')),
+            Chip(label: Text(AppLocalizations.of(context).futureOtpSms)),
           ],
         ),
       ),

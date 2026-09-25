@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Matches AppColors.milkWhite — splash matches Flutter pre-login. -->
+    <color name="splash_background">#FFFDF8</color>
+    <color name="launch_background">#FFFDF8</color>
+    <color name="ic_launcher_background">#FFFDF8</color>
+</resources>

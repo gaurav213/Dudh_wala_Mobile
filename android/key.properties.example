@@ -1,0 +1,6 @@
+# Copy to android/key.properties (git-ignored) before Play Store upload.
+# Do NOT commit real passwords.
+storePassword=REPLACE_ME
+keyPassword=REPLACE_ME
+keyAlias=doodhkhata
+storeFile=/absolute/path/to/upload-keystore.jks

@@ -6,6 +6,7 @@ import '../../../../app/theme/app_theme.dart';
 import '../../../auth/presentation/providers/auth_provider.dart';
 import '../../../auth/presentation/providers/login_validators.dart';
 import '../providers/customer_providers.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class CustomerFormScreen extends ConsumerStatefulWidget {
   const CustomerFormScreen({super.key, this.customerId});
@@ -34,7 +35,8 @@ class _CustomerFormScreenState extends ConsumerState<CustomerFormScreen> {
   }
 
   Future<void> _load() async {
-    final c = await ref.read(customerRepositoryProvider).get(widget.customerId!);
+    final c =
+        await ref.read(customerRepositoryProvider).get(widget.customerId!);
     if (c == null || !mounted) return;
     _name.text = c['name'] as String;
     _phone.text = c['phone'] as String;
@@ -80,6 +82,11 @@ class _CustomerFormScreenState extends ConsumerState<CustomerFormScreen> {
         });
       }
       if (mounted) context.pop();
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text('$e')));
+      }
     } finally {
       if (mounted) setState(() => _loading = false);
     }
@@ -89,8 +96,8 @@ class _CustomerFormScreenState extends ConsumerState<CustomerFormScreen> {
   Widget build(BuildContext context) {
     final editing = widget.customerId != null;
     return Scaffold(
-      backgroundColor: AppColors.cream,
-      appBar: AppBar(title: Text(editing ? 'Edit customer' : 'Add customer')),
+      backgroundColor: Dk.of(context).cream,
+      appBar: AppBar(title: Text(editing ? AppLocalizations.of(context).editCustomer : AppLocalizations.of(context).addCustomer)),
       body: Form(
         key: _formKey,
         child: ListView(
@@ -98,15 +105,15 @@ class _CustomerFormScreenState extends ConsumerState<CustomerFormScreen> {
           children: [
             TextFormField(
               controller: _name,
-              decoration: const InputDecoration(labelText: 'Name'),
+              decoration: InputDecoration(labelText: AppLocalizations.of(context).name),
               validator: LoginValidators.name,
             ),
             const SizedBox(height: 12),
             TextFormField(
               controller: _phone,
               keyboardType: TextInputType.phone,
-              decoration: const InputDecoration(
-                labelText: 'Phone',
+              decoration: InputDecoration(
+                labelText: AppLocalizations.of(context).phone,
                 prefixText: '+91 ',
               ),
               validator: LoginValidators.phone,
@@ -114,15 +121,16 @@ class _CustomerFormScreenState extends ConsumerState<CustomerFormScreen> {
             const SizedBox(height: 12),
             TextFormField(
               controller: _address,
-              decoration: const InputDecoration(labelText: 'Address'),
+              decoration: InputDecoration(labelText: AppLocalizations.of(context).address),
               maxLines: 2,
             ),
             const SizedBox(height: 12),
             TextFormField(
               controller: _rate,
-              keyboardType: const TextInputType.numberWithOptions(decimal: true),
-              decoration: const InputDecoration(
-                labelText: 'Default rate / litre (₹)',
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+              decoration: InputDecoration(
+                labelText: AppLocalizations.of(context).defaultRatePerLitre,
               ),
               validator: (v) {
                 final n = double.tryParse(v ?? '');
@@ -133,13 +141,13 @@ class _CustomerFormScreenState extends ConsumerState<CustomerFormScreen> {
             const SizedBox(height: 12),
             TextFormField(
               controller: _notes,
-              decoration: const InputDecoration(labelText: 'Notes'),
+              decoration: InputDecoration(labelText: AppLocalizations.of(context).notes),
               maxLines: 2,
             ),
             const SizedBox(height: 24),
             FilledButton(
               onPressed: _loading ? null : _save,
-              child: Text(_loading ? 'Saving…' : 'Save'),
+              child: Text(_loading ? AppLocalizations.of(context).saving : 'Save'),
             ),
           ],
         ),

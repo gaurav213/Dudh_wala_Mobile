@@ -1,0 +1,1267 @@
+{
+  "@@locale": "hi",
+  "appTitle": "दूध वाला",
+  "settings": "सेटिंग्स",
+  "appearance": "दिखावट",
+  "language": "भाषा",
+  "themeLight": "लाइट",
+  "themeDark": "डार्क",
+  "themeSystem": "सिस्टम",
+  "themeSystemHint": "सिस्टम आपके डिवाइस की सेटिंग के अनुसार चलेगा।",
+  "langEnglish": "English",
+  "langHindi": "हिंदी",
+  "langMarathi": "मराठी",
+  "environment": "एनवायरनमेंट",
+  "apiBaseUrl": "API बेस URL",
+  "syncStatus": "सिंक स्थिति",
+  "conflictResolution": "कॉन्फ्लिक्ट समाधान",
+  "profile": "प्रोफ़ाइल",
+  "logOut": "लॉग आउट",
+  "logOutConfirmTitle": "लॉग आउट करें?",
+  "logOutConfirmMessage": "क्या आप वाकई लॉग आउट करना चाहते हैं?",
+  "yes": "हाँ",
+  "no": "नहीं",
+  "signOut": "साइन आउट",
+  "signIn": "साइन इन",
+  "signingIn": "साइन इन हो रहा है…",
+  "loginFailed": "लॉगिन असफल",
+  "register": "रजिस्टर करें",
+  "registering": "रजिस्टर हो रहा है…",
+  "createAccount": "खाता बनाएँ",
+  "alreadyHaveAccount": "पहले से खाता है? साइन इन करें",
+  "mobileNumber": "मोबाइल नंबर",
+  "password": "पासवर्ड",
+  "name": "नाम",
+  "emailOptional": "ईमेल (वैकल्पिक)",
+  "save": "सेव करें",
+  "saving": "सेव हो रहा है…",
+  "saved": "सेव हो गया",
+  "edit": "संपादित करें",
+  "delete": "हटाएँ",
+  "add": "जोड़ें",
+  "update": "अपडेट करें",
+  "search": "खोजें",
+  "filter": "फ़िल्टर",
+  "all": "सभी",
+  "open": "खोलें",
+  "close": "बंद करें",
+  "back": "वापस",
+  "next": "आगे",
+  "done": "हो गया",
+  "retry": "फिर कोशिश करें",
+  "loading": "लोड हो रहा है…",
+  "refresh": "रिफ्रेश",
+  "details": "विवरण",
+  "status": "स्थिति",
+  "notes": "नोट्स",
+  "notesOptional": "नोट्स (वैकल्पिक)",
+  "optional": "वैकल्पिक",
+  "required": "ज़रूरी",
+  "call": "कॉल करें",
+  "map": "मैप",
+  "address": "पता",
+  "city": "शहर",
+  "state": "राज्य",
+  "postalCode": "पिन कोड",
+  "defaultLabel": "डिफ़ॉल्ट",
+  "active": "सक्रिय",
+  "blocked": "ब्लॉक",
+  "pending": "बाकी",
+  "delivered": "पहुँच गया",
+  "skipped": "छोड़ा",
+  "cancelled": "रद्द",
+  "failed": "असफल",
+  "outForDelivery": "डिलीवरी के लिए निकला",
+  "customer": "ग्राहक",
+  "customers": "ग्राहक",
+  "farm": "फार्म",
+  "farms": "फार्म",
+  "milk": "दूध",
+  "delivery": "डिलीवरी",
+  "deliveries": "डिलीवरी",
+  "quantityL": "मात्रा (लीटर)",
+  "litres": "लीटर",
+  "shift": "शिफ्ट",
+  "morning": "सुबह",
+  "evening": "शाम",
+  "afternoon": "दोपहर",
+  "milkType": "दूध का प्रकार",
+  "ratePerLitre": "दर / लीटर",
+  "amount": "राशि",
+  "amountInr": "राशि (₹)",
+  "payment": "भुगतान",
+  "payments": "भुगतान",
+  "bills": "बिल",
+  "billing": "बिलिंग",
+  "outstanding": "बकाया",
+  "generate": "बनाएँ",
+  "generateBill": "बिल बनाएँ",
+  "generateList": "लिस्ट बनाएँ",
+  "cantDeliver": "डिलीवरी नहीं कर सकते",
+  "skip": "छोड़ें",
+  "keepMilk": "दूध रखें",
+  "noMilk": "दूध नहीं",
+  "noMilkThisDay": "आज दूध नहीं",
+  "wantMilkAgain": "मुझे फिर दूध चाहिए",
+  "farmNotifiedSkipped": "फार्म को सूचित किया — दूध छोड़ दिया",
+  "farmNotifiedRestored": "फार्म को सूचित किया — दूध वापस",
+  "day": "दिन",
+  "period": "अवधि",
+  "from": "से",
+  "to": "तक",
+  "thisWeek": "इस सप्ताह",
+  "thisMonth": "इस महीने",
+  "pickDate": "तारीख चुनें",
+  "customDay": "अपना दिन",
+  "manage": "मैनेज",
+  "managed": "मैनेज्ड",
+  "extra": "अतिरिक्त",
+  "extraMilk": "अतिरिक्त दूध",
+  "lessMilk": "कम दूध",
+  "markDelivered": "पहुँचाया चिह्नित करें",
+  "recordCash": "नकद दर्ज करें",
+  "out": "बाहर",
+  "fail": "फेल",
+  "approve": "मंज़ूर करें",
+  "invite": "आमंत्रित करें",
+  "accept": "स्वीकार करें",
+  "decline": "अस्वीकार करें",
+  "send": "भेजें",
+  "submitRequest": "अनुरोध भेजें",
+  "cancelRequest": "अनुरोध रद्द करें",
+  "cancelRequestTitle": "अनुरोध रद्द करें?",
+  "cancelRequestBody": "क्या आप वाकई यह अनुरोध रद्द करना चाहते हैं?",
+  "findFarms": "फार्म खोजें",
+  "connected": "जुड़ा हुआ",
+  "subscription": "सब्सक्रिप्शन",
+  "subscriptions": "सब्सक्रिप्शन",
+  "notifications": "सूचनाएँ",
+  "noNotifications": "अभी कोई सूचना नहीं",
+  "markAllRead": "सभी पढ़ा हुआ",
+  "unread": "अपठित",
+  "view": "देखें",
+  "none": "कोई नहीं",
+  "or": "या",
+  "and": "और",
+  "more": "और",
+  "less": "कम",
+  "total": "कुल",
+  "remaining": "शेष",
+  "collected": "एकत्रित",
+  "earned": "कमाई",
+  "photo": "फोटो",
+  "camera": "कैमरा",
+  "gallery": "गैलरी",
+  "upload": "अपलोड",
+  "download": "डाउनलोड",
+  "share": "शेयर",
+  "copy": "कॉपी",
+  "copied": "कॉपी हो गया",
+  "select": "चुनें",
+  "selected": "चयनित",
+  "clear": "साफ़ करें",
+  "apply": "लागू करें",
+  "reset": "रीसेट",
+  "continueAction": "जारी रखें",
+  "gotIt": "समझ गया",
+  "ok": "ठीक है",
+  "error": "त्रुटि",
+  "success": "सफल",
+  "warning": "चेतावनी",
+  "info": "जानकारी",
+  "somethingWentWrong": "कुछ गलत हो गया",
+  "pleaseTryAgain": "कृपया फिर कोशिश करें",
+  "noInternet": "इंटरनेट उपलब्ध नहीं",
+  "unableToReachServer": "सर्वर से संपर्क नहीं हो पाया। कनेक्शन जाँचें और फिर कोशिश करें।",
+  "incorrectCredentials": "मोबाइल नंबर या पासवर्ड गलत है।",
+  "accountBlocked": "यह खाता ब्लॉक है। सपोर्ट से संपर्क करें।",
+  "accountNotActive": "यह खाता अभी सक्रिय नहीं है।",
+  "signInFailed": "साइन इन असफल। कृपया फिर कोशिश करें।",
+  "registrationFailed": "रजिस्ट्रेशन असफल",
+  "enterValidAmount": "सही राशि दर्ज करें।",
+  "enterValidQuantity": "सही मात्रा दर्ज करें।",
+  "fieldRequired": "यह फ़ील्ड ज़रूरी है",
+  "nameRequired": "कृपया नाम दर्ज करें",
+  "mobileRequired": "कृपया मोबाइल नंबर दर्ज करें",
+  "passwordRequired": "कृपया पासवर्ड दर्ज करें",
+  "invalidMobile": "सही 10 अंकों का मोबाइल नंबर दर्ज करें",
+  "noData": "कोई डेटा नहीं",
+  "emptyDefault": "यहाँ अभी कुछ नहीं",
+  "couldNotLoad": "लोड नहीं हो सका",
+  "pullToRefresh": "रिफ्रेश के लिए खींचें",
+  "navHome": "होम",
+  "navFarms": "फार्म",
+  "navFindFarms": "फार्म खोजें",
+  "navAddresses": "पते",
+  "navInbox": "अनुरोध",
+  "navProfile": "प्रोफ़ाइल",
+  "navDashboard": "मुख्य पृष्ठ",
+  "navTodaysDeliveries": "आज की डिलीवरी",
+  "navCustomers": "ग्राहक",
+  "navPendingCash": "लंबित नकद",
+  "navSettings": "सेटिंग्स",
+  "navFarmProfile": "फार्म प्रोफ़ाइल",
+  "navServiceAreas": "सेवा क्षेत्र",
+  "navProducts": "उत्पाद",
+  "navMilkProducts": "दूध उत्पाद",
+  "navRequests": "अनुरोध",
+  "navCustomerRequests": "ग्राहक अनुरोध",
+  "navInvitations": "निमंत्रण",
+  "navCustomerInvitations": "ग्राहक निमंत्रण",
+  "navFarmInvitations": "फार्म निमंत्रण",
+  "navStaff": "स्टाफ",
+  "navDeliveryStaff": "डिलीवरी स्टाफ",
+  "navExtraRequests": "अतिरिक्त अनुरोध",
+  "navCollections": "कलेक्शन",
+  "navHistory": "इतिहास",
+  "navRateCustomers": "ग्राहक रेटिंग",
+  "navNotifications": "सूचनाएँ",
+  "navBilling": "बिलिंग",
+  "navBills": "बिल",
+  "navPayments": "भुगतान",
+  "navReports": "रिपोर्ट",
+  "navSubscriptions": "सब्सक्रिप्शन",
+  "navDeliveryReport": "डिलीवरी रिपोर्ट",
+  "navConnectedCustomers": "जुड़े ग्राहक",
+  "navServiceRequests": "सेवा अनुरोध",
+  "navFarmApprovals": "फार्म मंज़ूरी",
+  "navLegacySuppliers": "पुराने सप्लायर",
+  "navAudit": "ऑडिट",
+  "navOutstanding": "बकाया",
+  "farmConsole": "फार्म कंसोल",
+  "platformConsole": "प्लेटफ़ॉर्म कंसोल",
+  "customerShellTitle": "मेरा दूध खाता",
+  "deliveryShellTitle": "डिलीवरी राउंड",
+  "settingsSubtitle": "दिखावट और भाषा की प्राथमिकताएँ",
+  "datesToday": "आज",
+  "datesYesterday": "कल",
+  "datesTomorrow": "कल",
+  "datesThisWeek": "इस सप्ताह",
+  "datesThisMonth": "इस महीने",
+  "monday": "सोमवार",
+  "tuesday": "मंगलवार",
+  "wednesday": "बुधवार",
+  "thursday": "गुरुवार",
+  "friday": "शुक्रवार",
+  "saturday": "शनिवार",
+  "sunday": "रविवार",
+  "amounts": "राशियाँ",
+  "todaysAmount": "आज की",
+  "givenThisMonth": "इस महीने दिया",
+  "totalRemaining": "कुल शेष",
+  "reportCashGiven": "दी गई नकद बताएँ",
+  "reportCashDialogTitle": "दी गई नकद बताएँ",
+  "photoProofRequired": "फोटो सबूत ज़रूरी है (jpeg / png / webp)।",
+  "cancel": "रद्द करें",
+  "submit": "जमा करें",
+  "addCashPhoto": "नकद भुगतान का फोटो जोड़ें।",
+  "cashClaimSubmitted": "नकद क्लेम जमा। स्टाफ की पुष्टि का इंतज़ार।",
+  "desktopCameraHint": "डेस्कटॉप पर कैमरा उपलब्ध नहीं — गैलरी से फोटो चुनें।",
+  "pendingCashTitle": "लंबित नकद",
+  "confirm": "पुष्टि करें",
+  "reject": "अस्वीकार करें",
+  "noPendingCash": "पुष्टि के लिए कोई नकद क्लेम नहीं।",
+  "farmAajKiList": "आज की डिलीवरी",
+  "farmDiya": "डिलीवर किया",
+  "farmPaisaLiya": "नकद दर्ज करें",
+  "farmCustomersTile": "ग्राहक",
+  "farmSetupTile": "फार्म सेटअप",
+  "farmPaisaTitle": "कमाई",
+  "farmMadeToday": "आज",
+  "farmMadeWeek": "इस सप्ताह",
+  "farmMadeMonth": "इस महीने",
+  "farmCollectedToday": "आज",
+  "farmCollectedWeek": "इस सप्ताह",
+  "farmCollectedMonth": "इस महीने",
+  "farmToCollect": "बकाया राशि",
+  "farmMadeSection": "दूध की कमाई",
+  "farmCollectedSection": "एकत्रित नकद",
+  "autoGenerateDailyList": "रोज़ाना लिस्ट अपने आप बनाएँ",
+  "notGeneratedYet": "इस तारीख के लिए अभी नहीं बनी",
+  "lastGenerated": "आखिरी बार {when}",
+  "@lastGenerated": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "noDeliveryListYet": "इस तारीख की डिलीवरी लिस्ट अभी नहीं",
+  "tapGenerateListHint": "सक्रिय ग्राहकों से स्टॉप बनाने के लिए «लिस्ट बनाएँ» दबाएँ।",
+  "noCustomersToDeliver": "इस तारीख के लिए कोई डिलीवरी नहीं।\nलिस्ट बनाएँ, या ग्राहकों के सक्रिय सब्सक्रिप्शन जाँचें।",
+  "createdSkippedSummary": "बनाए {created}; छोड़े {skipped}",
+  "@createdSkippedSummary": {
+    "placeholders": {
+      "created": {
+        "type": "String"
+      },
+      "skipped": {
+        "type": "String"
+      }
+    }
+  },
+  "noActiveCustomersDue": "इस तारीख के लिए कोई सक्रिय ग्राहक नहीं। ग्राहक / सब्सक्रिप्शन जाँचें।",
+  "notifiedCustomersSkipped": "ग्राहकों को सूचित · छोड़े {n}",
+  "@notifiedCustomersSkipped": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "customersDontWantMilk": "{day} को {count} ग्राहक दूध नहीं चाहते",
+  "@customersDontWantMilk": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "customerDoesNotWantMilk": "ग्राहक इस दिन दूध नहीं चाहते",
+  "fullDayLabel": "पूरा दिन · {label}",
+  "@fullDayLabel": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "scheduleLabel": "शेड्यूल · {label}",
+  "@scheduleLabel": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "deliveryCalendar": "डिलीवरी कैलेंडर",
+  "noMilkOnDate": "{date} को दूध नहीं",
+  "@noMilkOnDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "wantMilkOnDate": "{date} को मुझे दूध चाहिए",
+  "@wantMilkOnDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "skipMilkConfirmTitle": "इस दिन दूध नहीं?",
+  "skipMilkConfirmBody": "हम फार्म को {date} छोड़ने के लिए कहेंगे। इसका बिल नहीं लगेगा।",
+  "@skipMilkConfirmBody": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "wantMilkConfirmTitle": "फिर दूध चाहिए?",
+  "wantMilkConfirmBody": "हम फार्म को बताएँगे कि आपको {date} को फिर दूध चाहिए।",
+  "@wantMilkConfirmBody": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "skippedNoMilkDay": "छोड़ा — इस दिन दूध नहीं",
+  "noDeliveryListedYet": "इस दिन की डिलीवरी अभी लिस्ट में नहीं।\nऊपर «दूध नहीं» दबाकर फार्म को बताएँ, या लिस्ट बनने का इंतज़ार करें।",
+  "noDeliveriesOnDay": "इस दिन कोई डिलीवरी नहीं।",
+  "yourDelivery": "आपकी डिलीवरी",
+  "selectDay": "दिन चुनें",
+  "lessThanUsualCharged": "सामान्य से कम · {qty} का बिल",
+  "@lessThanUsualCharged": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "todaysMilk": "आज का दूध",
+  "todaysMilkDelivered": "आज का दूध · पहुँच गया ✓",
+  "todaysMilkYouSkipped": "आज का दूध · आपने छोड़ा",
+  "todayFarmNotDelivering": "आज · फार्म डिलीवरी नहीं कर रहा",
+  "scheduledMilk": "निर्धारित दूध",
+  "totalDelivered": "कुल पहुँचाया",
+  "edited": "संपादित",
+  "customerStaffBreakdown": "ग्राहक {customer} · स्टाफ {staff}",
+  "@customerStaffBreakdown": {
+    "placeholders": {
+      "customer": {
+        "type": "String"
+      },
+      "staff": {
+        "type": "String"
+      }
+    }
+  },
+  "inboxSubtitleEmpty": "निमंत्रण और आपकी दूध अनुरोध",
+  "inboxSubtitleCounts": "{requests} अनुरोध · {invitations} निमंत्रण लंबित",
+  "@inboxSubtitleCounts": {
+    "placeholders": {
+      "requests": {
+        "type": "String"
+      },
+      "invitations": {
+        "type": "String"
+      }
+    }
+  },
+  "billsSubtitleEmpty": "अब तक का बकाया और मासिक बिल",
+  "billsCount": "{count} बिल",
+  "@billsCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "farmNotDeliveringBody": "आपका फार्म आज दूध नहीं दे रहा।",
+  "noMilkTodayBtn": "आज दूध नहीं",
+  "skipping": "छोड़ा जा रहा है…",
+  "updating": "अपडेट हो रहा है…",
+  "generating": "बन रहा है…",
+  "customerMilk": "ग्राहक का दूध",
+  "thisDay": "यह दिन · {date}",
+  "@thisDay": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "noMilkStopsCustomer": "इस दिन इस ग्राहक के लिए कोई स्टॉप नहीं।",
+  "tillDateThisMonth": "अब तक (इस महीने)",
+  "deliveredTillDate": "अब तक पहुँचाया",
+  "extraTillDate": "अब तक अतिरिक्त",
+  "pendingCash": "लंबित नकद",
+  "advance": "एडवांस",
+  "milkTillToday": "आज तक का दूध",
+  "previousDues": "पिछली बाकी",
+  "stillDue": "अभी बाकी",
+  "addAddress": "पता जोड़ें",
+  "addAddressFirstForFarms": "पहले डिलीवरी पता जोड़ें, ताकि आपको सेवा देने वाले फार्म मिल सकें।",
+  "searchNow": "अभी खोजें",
+  "anyFilter": "सभी",
+  "notConnected": "जुड़े नहीं",
+  "connectedWithTypes": "जुड़े · {types}",
+  "@connectedWithTypes": {
+    "placeholders": {
+      "types": {
+        "type": "String"
+      }
+    }
+  },
+  "servesYourPostalCode": "आपके पिनकोड में सेवा",
+  "servesYourArea": "आपके इलाके में सेवा",
+  "servesYourCity": "आपके शहर में सेवा",
+  "mixed": "मिश्रित",
+  "toned": "टोन्ड",
+  "milkTypeOther": "अन्य",
+  "requestSentToFarm": "फार्म को अनुरोध भेजा",
+  "enterLitres": "लीटर दर्ज करें",
+  "sending": "भेज रहे हैं…",
+  "saveChanges": "बदलाव सहेजें",
+  "sendRequest": "अनुरोध भेजें",
+  "noReviewsYet": "अभी कोई समीक्षा नहीं",
+  "backToSearch": "खोज पर वापस",
+  "reviewsCount": "{count} समीक्षाएँ",
+  "@reviewsCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "maxQtyShort": "अधिकतम {qty}",
+  "@maxQtyShort": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "tillTodayParen": "(आज तक)",
+  "billTillTodayLabel": "{label} · आज तक",
+  "@billTillTodayLabel": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "noFarmInvitationsYet": "फार्म से अभी कोई निमंत्रण नहीं।\nआप फार्म खोजकर दूध अनुरोध भेज सकते हैं।",
+  "backToMilkList": "दूध लिस्ट पर वापस",
+  "openArrow": "खोलें →",
+  "secretDashboard": "सीक्रेट डैशबोर्ड",
+  "editProfile": "प्रोफ़ाइल संपादित करें",
+  "deliverTo": "डिलीवर करें",
+  "exactDeliveryPointSaved": "सटीक डिलीवरी पॉइंट सेव",
+  "requestMilk": "दूध मंगाएँ",
+  "cancelExtra": "अतिरिक्त रद्द करें",
+  "deliver": "डिलीवर",
+  "route": "रूट",
+  "runMode": "रन मोड",
+  "collections": "कलेक्शन",
+  "history": "इतिहास",
+  "reviews": "समीक्षाएँ",
+  "rate": "रेट",
+  "products": "उत्पाद",
+  "serviceAreas": "सेवा क्षेत्र",
+  "invitations": "निमंत्रण",
+  "staff": "स्टाफ",
+  "requests": "अनुरोध",
+  "connectedCustomers": "जुड़े ग्राहक",
+  "farmProfile": "फार्म प्रोफ़ाइल",
+  "dashboard": "मुख्य पृष्ठ",
+  "home": "होम",
+  "welcome": "स्वागत है",
+  "login": "लॉगिन",
+  "passwordHint": "पासवर्ड",
+  "showPassword": "पासवर्ड दिखाएँ",
+  "hidePassword": "पासवर्ड छिपाएँ",
+  "notifOutForDeliveryTitle": "डिलीवरी के लिए निकला",
+  "notifOutForDeliveryBody": "आपका दूध रास्ते में है।",
+  "notifMilkDeliveredTitle": "दूध पहुँच गया",
+  "notifMilkDeliveredBody": "आज का दूध पहुँचा दिया गया है।",
+  "notifCustomerNoMilkTitle": "आज दूध नहीं",
+  "notifCustomerNoMilkBody": "{name} {date} को दूध नहीं चाहते।",
+  "@notifCustomerNoMilkBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "notifCustomerWantsMilkTitle": "फिर दूध चाहिए",
+  "notifCustomerWantsMilkBody": "{name} को {date} को फिर दूध चाहिए।",
+  "@notifCustomerWantsMilkBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "notifFarmNoDeliveryTitle": "आज डिलीवरी नहीं",
+  "notifFarmNoDeliveryBody": "आपका फार्म {date} को दूध नहीं दे रहा।",
+  "@notifFarmNoDeliveryBody": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "notifCustomerConfirmedTitle": "डिलीवरी की पुष्टि",
+  "notifCustomerConfirmedBody": "ग्राहक ने दूध मिलने की पुष्टि की।",
+  "notifExtraRequestedTitle": "अतिरिक्त दूध का अनुरोध",
+  "notifExtraAcceptedTitle": "अतिरिक्त अनुरोध मंज़ूर",
+  "notifExtraRejectedTitle": "अतिरिक्त अनुरोध अस्वीकृत",
+  "notifCashRecordedTitle": "नकद भुगतान दर्ज",
+  "notifCashConfirmedTitle": "नकद भुगतान पुष्टि",
+  "notifCashRejectedTitle": "नकद भुगतान अस्वीकृत",
+  "notifRateUpdatedTitle": "दूध का दर अपडेट",
+  "notifServiceRequestCreatedTitle": "नया दूध अनुरोध",
+  "notifServiceRequestAcceptedTitle": "अनुरोध स्वीकार",
+  "notifServiceRequestCancelledTitle": "अनुरोध रद्द",
+  "notifGenericTitle": "सूचना",
+  "extraMilkThisMonth": "इस महीने अतिरिक्त दूध · {qty}",
+  "@extraMilkThisMonth": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "cashAwaitingConfirm": "स्टाफ पुष्टि बाकी नकद · {amount}",
+  "@cashAwaitingConfirm": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "keep": "रखें",
+  "keepRequest": "अनुरोध रखें",
+  "keepDeliveries": "डिलीवरी रखें",
+  "clearAll": "सभी साफ़ करें",
+  "remove": "हटाएँ",
+  "resend": "फिर भेजें",
+  "members": "सदस्य",
+  "timeline": "टाइमलाइन",
+  "purpose": "उद्देश्य",
+  "billPayment": "बिल भुगतान",
+  "pdf": "PDF",
+  "phone": "फ़ोन",
+  "photos": "फ़ोटो",
+  "addPhoto": "फ़ोटो जोड़ें",
+  "changePhoto": "फ़ोटो बदलें",
+  "profilePhotoUpdated": "प्रोफ़ाइल फ़ोटो अपडेट हो गई",
+  "farmName": "फार्म का नाम",
+  "businessName": "व्यवसाय का नाम",
+  "description": "विवरण",
+  "descriptionOptional": "विवरण (वैकल्पिक)",
+  "area": "इलाका",
+  "areaName": "इलाके का नाम",
+  "addressLine1": "पता पंक्ति 1",
+  "addressLine2": "पता पंक्ति 2",
+  "nameOptional": "नाम (वैकल्पिक)",
+  "customerNameOptional": "ग्राहक का नाम (वैकल्पिक)",
+  "commentOptional": "टिप्पणी (वैकल्पिक)",
+  "chooseAnyDay": "कोई भी दिन चुनें",
+  "customRange": "कस्टम अवधि",
+  "pickStartAndEndDates": "शुरू और अंत की तारीख चुनें",
+  "getSetUp": "सेटअप पूरा करें",
+  "farmApproved": "फार्म स्वीकृत",
+  "waitingPlatformApproval": "प्लेटफ़ॉर्म मंज़ूरी का इंतज़ार",
+  "completeYourProfile": "अपनी प्रोफ़ाइल पूरी करें",
+  "profileChecklistSubtitle": "व्यवसाय का नाम, विवरण और ईमेल",
+  "addServiceArea": "सेवा क्षेत्र जोड़ें",
+  "soCustomersCanFindYou": "ताकि ग्राहक आपको ढूँढ सकें",
+  "addMilkProduct": "दूध उत्पाद जोड़ें",
+  "setRateAndMinQty": "दर और न्यूनतम मात्रा सेट करें",
+  "customersToDeliverSubtitle": "डिलीवरी वाले ग्राहक — डिलीवर्ड करें",
+  "productsAreasProfile": "उत्पाद, क्षेत्र और प्रोफ़ाइल",
+  "nConnected": "{count} जुड़े",
+  "@nConnected": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "flagForReview": "समीक्षा के लिए चिह्नित करें",
+  "billUpdatedTillToday": "इस महीने का बिल अपडेट (आज तक)",
+  "farmProfileUpdated": "फार्म प्रोफ़ाइल अपडेट हो गई",
+  "languagesUpdated": "भाषाएँ अपडेट हो गईं",
+  "maxFiveLanguages": "आप अधिकतम 5 भाषाएँ चुन सकते हैं।",
+  "spokenLanguages": "बोली जाने वाली भाषाएँ",
+  "saveLanguages": "भाषाएँ सहेजें",
+  "addProductBeforeInvite": "ग्राहकों को आमंत्रित करने से पहले उपलब्ध उत्पाद जोड़ें",
+  "proposedRatePerL": "प्रस्तावित दर (₹/ली)",
+  "preferredStartDateYmd": "पसंदीदा शुरू तारीख (YYYY-MM-DD)",
+  "preferredStartDate": "पसंदीदा शुरू तारीख",
+  "deliveryInstructionsOptional": "डिलीवरी निर्देश (वैकल्पिक)",
+  "noCustomerInvitationsYet": "अभी कोई ग्राहक आमंत्रण नहीं।",
+  "startingDate": "शुरू {date}",
+  "@startingDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "noDeliveriesAssignedToday": "आज कोई डिलीवरी असाइन नहीं।",
+  "noDeliveriesInList": "इस सूची में कोई डिलीवरी नहीं।",
+  "noEditedDeliveriesToday": "आज कोई संपादित डिलीवरी नहीं।",
+  "noEditedDeliveriesForStaff": "इस स्टाफ के लिए कोई संपादित डिलीवरी नहीं।",
+  "noExtraMilkRecordedToday": "आज कोई अतिरिक्त दूध दर्ज नहीं।",
+  "deliveryPersonUpdated": "डिलीवरी व्यक्ति अपडेट",
+  "deliveryPerson": "डिलीवरी व्यक्ति",
+  "noActiveSubscriptionYet": "अभी कोई सक्रिय सब्सक्रिप्शन नहीं।",
+  "farmOwnerUnassigned": "फार्म मालिक (मैं) / असाइन नहीं",
+  "cow": "गाय",
+  "buffalo": "भैंस",
+  "startDateYmd": "शुरू तारीख (YYYY-MM-DD)",
+  "mobileLabel": "मोबाइल: {number}",
+  "@mobileLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "pinLabel": "पिन: {code}",
+  "@pinLabel": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "radiusKmLabel": "रेडियस: {km} किमी",
+  "@radiusKmLabel": {
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "activeYesNo": "सक्रिय: {value}",
+  "@activeYesNo": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "serviceRadiusKmOptional": "सेवा रेडियस (किमी, वैकल्पिक)",
+  "noServiceAreasYet": "अभी कोई सेवा क्षेत्र नहीं।",
+  "minimumQuantityL": "न्यूनतम मात्रा (ली)",
+  "maximumQuantityOptional": "अधिकतम मात्रा (वैकल्पिक)",
+  "availableShifts": "उपलब्ध शिफ्ट",
+  "availableForNewCustomers": "नए ग्राहकों के लिए उपलब्ध",
+  "selectAtLeastOneShift": "कम से कम एक शिफ्ट चुनें",
+  "marketRateTitle": "बाज़ार दर · {name}",
+  "@marketRateTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "rateUpdatedTo": "दर ₹{value}/ली अपडेट",
+  "@rateUpdatedTo": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "noProductsYet": "अभी कोई उत्पाद नहीं।",
+  "ratePerLitreValue": "दर: ₹{value}/ली",
+  "@ratePerLitreValue": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "changeTodaysRate": "आज का दर बदलें",
+  "deactivateStaff": "स्टाफ निष्क्रिय करें",
+  "reactivateStaff": "स्टाफ फिर सक्रिय करें",
+  "removeStaff": "स्टाफ हटाएँ",
+  "staffDeactivated": "स्टाफ निष्क्रिय",
+  "staffRemoved": "स्टाफ हटाया गया",
+  "staffStatus": "स्टाफ स्थिति",
+  "reassignDeliveries": "डिलीवरी फिर असाइन करें",
+  "noStaffMembersYet": "अभी कोई स्टाफ सदस्य नहीं।",
+  "noInvitationsSent": "कोई आमंत्रण नहीं भेजा गया।",
+  "submitReview": "समीक्षा भेजें",
+  "thanksForReview": "आपकी समीक्षा के लिए धन्यवाद",
+  "requestCancelled": "अनुरोध रद्द",
+  "editRequest": "अनुरोध संपादित करें",
+  "addAddressBeforeRequest": "सेवा माँगने से पहले डिलीवरी पता जोड़ें",
+  "writeAReview": "समीक्षा लिखें",
+  "deliveryNotes": "डिलीवरी नोट्स",
+  "deliveryNotesHint": "गेट कोड, मंज़िल, पसंदीदा जगह…",
+  "quantity": "मात्रा",
+  "openMaps": "मैप्स खोलें",
+  "useCoordinates": "निर्देशांक उपयोग करें",
+  "enterValidLatLng": "सही अक्षांश और देशांतर दर्ज करें।",
+  "setAsDefaultAddress": "डिफ़ॉल्ट पता बनाएँ",
+  "setAsDefault": "डिफ़ॉल्ट बनाएँ",
+  "pasteFromMaps": "मैप्स से पेस्ट करें",
+  "previewInMaps": "मैप्स में देखें",
+  "extraMilkRequestSent": "अतिरिक्त दूध अनुरोध भेजा गया।",
+  "requestExtraMilk": "अतिरिक्त दूध माँगें",
+  "extraQuantityLitres": "अतिरिक्त मात्रा (लीटर)",
+  "myRequests": "मेरे अनुरोध",
+  "noExtraMilkRequestsYet": "अभी कोई अतिरिक्त दूध अनुरोध नहीं।",
+  "updatedThanks": "अपडेट हो गया। धन्यवाद!",
+  "reportAProblem": "समस्या बताएँ",
+  "whatWentWrong": "क्या गलत हुआ?",
+  "describeIssueOptional": "समस्या बताएँ (वैकल्पिक)",
+  "deliveryNotFound": "यह डिलीवरी नहीं मिली।",
+  "noUpdatesYet": "अभी कोई अपडेट नहीं।",
+  "thisMonthAndEarlier": "इस महीने और पहले",
+  "couldNotOpenPhotoPicker": "फ़ोटो पिकर नहीं खुल सका: {error}",
+  "@couldNotOpenPhotoPicker": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "customerRequired": "ग्राहक आवश्यक है",
+  "frequency": "आवृत्ति",
+  "daily": "रोज़ाना",
+  "alternateDays": "एक दिन छोड़कर",
+  "custom": "कस्टम",
+  "deliverySlot": "डिलीवरी स्लॉट",
+  "quantityLitres": "मात्रा (लीटर)",
+  "ratePerLitreInr": "दर / लीटर (₹)",
+  "quickActions": "त्वरित क्रियाएँ",
+  "defaultRate": "डिफ़ॉल्ट दर",
+  "defaultRatePerLitre": "डिफ़ॉल्ट दर / लीटर (₹)",
+  "addSubscription": "सब्सक्रिप्शन जोड़ें",
+  "recordPayment": "भुगतान दर्ज करें",
+  "notFound": "नहीं मिला",
+  "noCustomersYet": "अभी कोई ग्राहक नहीं। अपना पहला दूध ग्राहक जोड़ें।",
+  "noDeliveriesForTodayYet": "आज अभी कोई डिलीवरी नहीं।",
+  "deliveryHistory": "डिलीवरी इतिहास",
+  "quantityColon": "मात्रा: {value}",
+  "@quantityColon": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "amountColon": "राशि: {value}",
+  "@amountColon": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "statusColon": "स्थिति: {value}",
+  "@statusColon": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "billCreated": "बिल {number} बनाया गया",
+  "@billCreated": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "periodStart": "अवधि शुरू",
+  "periodEnd": "अवधि अंत",
+  "billLines": "पंक्तियाँ: {count}",
+  "@billLines": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "subtotalLabel": "उप-योग: {amount}",
+  "@subtotalLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "noOutstandingDues": "कोई बकाया नहीं। बढ़िया!",
+  "cash": "नकद",
+  "upi": "UPI",
+  "bankTransfer": "बैंक ट्रांसफर",
+  "rejectCashClaim": "नकद दावा अस्वीकार करें",
+  "paymentProof": "भुगतान प्रमाण",
+  "forgotPassword": "पासवर्ड भूल गए",
+  "futureOtpSms": "आगे: SMS से OTP",
+  "conflicts": "संघर्ष",
+  "chooseVersionToKeep": "कौन सा संस्करण रखना है चुनें",
+  "local": "लोकल",
+  "remote": "रिमोट",
+  "noSyncConflicts": "कोई सिंक संघर्ष नहीं।",
+  "phase": "चरण",
+  "queue": "कतार",
+  "lastSynced": "पिछली बार सिंक",
+  "lastError": "पिछली त्रुटि",
+  "syncNow": "अभी सिंक करें",
+  "searchByDeliveryAddress": "अपने डिलीवरी पते से खोजें",
+  "searchFarmsNearYou": "पास की डिलीवरी वाले फार्म देखने के लिए खोजें।",
+  "noReviewsFromDairyYet": "अभी आपकी डेयरी से कोई समीक्षा नहीं।",
+  "method": "तरीका",
+  "methodColon": "तरीका: {value}",
+  "@methodColon": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "couldNotStartApp": "ऐप शुरू नहीं हो सका",
+  "addDeliveryAddress": "डिलीवरी पता जोड़ें",
+  "customersTodayCount": "आज {count} ग्राहक",
+  "@customersTodayCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "activate": "सक्रिय करें",
+  "deactivate": "निष्क्रिय करें",
+  "addresses": "पते",
+  "otpPasswordReset": "OTP पासवर्ड रीसेट",
+  "smsOtpLaterRelease": "SMS OTP सत्यापन बाद में आएगा।",
+  "remainingLeft": "{count} बाकी",
+  "@remainingLeft": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "hiGreeting": "नमस्ते, {name}",
+  "@hiGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "thereFallback": "वहाँ",
+  "todayDotDate": "आज · {date}",
+  "@todayDotDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "noDeliveryScheduledOpenCalendar": "आज डिलीवरी नहीं · कैलेंडर खोलें",
+  "couldNotLoadTodaysMilkRetry": "आज का दूध लोड नहीं हुआ। फिर कोशिश करें।\n{error}",
+  "@couldNotLoadTodaysMilkRetry": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "couldNotLoadBillRetry": "बिल लोड नहीं हुआ। फिर कोशिश करें।\n{error}",
+  "@couldNotLoadBillRetry": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "amountValue": "राशि {amount}",
+  "@amountValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "openDeliveryForExtraHint": "उस दिन अतिरिक्त दूध माँगने के लिए कोई डिलीवरी खोलें।",
+  "forDate": "{date} के लिए",
+  "@forDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "openExtraFromDeliveryEnable": "अनुरोध चालू करने के लिए किसी डिलीवरी से अतिरिक्त दूध खोलें।",
+  "noDeliveredMilkThisMonthYet": "इस महीने अभी डिलीवर्ड दूध नहीं — पहली डिलीवरी के बाद बिल यहाँ दिखेगा।",
+  "dueAmount": "बाकी {amount}",
+  "@dueAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "billMonthTillToday": "बिल · {month} (आज तक)",
+  "@billMonthTillToday": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "payAnytimeCarryForward": "इस महीने कभी भी भुगतान करें · बाकी अगले महीने जाएगी",
+  "inboxPartialMissing": "कुछ अनुरोध छूट सकते हैं। खींचकर रीफ़्रेश करें।",
+  "inboxEmpty": "अभी कोई अनुरोध नहीं है।\nदूध माँगने के लिए फार्म खोजें, या फार्म का निमंत्रण प्रतीक्षा करें।",
+  "expired": "समाप्त",
+  "invitationDeclined": "निमंत्रण अस्वीकार",
+  "invitedRelative": "आमंत्रित {when}",
+  "@invitedRelative": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "requestedRelative": "अनुरोध {when}",
+  "@requestedRelative": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "firstDeliveryDateLabel": "पहली डिलीवरी {date}",
+  "@firstDeliveryDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "nextDeliveryDateLabel": "अगला {date}",
+  "@nextDeliveryDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "everyDay": "रोज़",
+  "onceAWeek": "हफ़्ते में एक बार",
+  "weekdays": "सप्ताह के दिन",
+  "statusAccepted": "स्वीकृत",
+  "invitation": "आमंत्रण",
+  "startDateLabel": "शुरू {date}",
+  "@startDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "yourRequest": "आपका अनुरोध",
+  "noFarmsFoundSearch": "इस खोज में कोई फार्म नहीं मिला।",
+  "tryDifferentMilkOrShift": "दूसरा दूध प्रकार या शिफ्ट आज़माएँ, या बाद में देखें।",
+  "productsCount": "{count} उत्पाद",
+  "@productsCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "rateThisFarm": "इस फार्म को रेट करें",
+  "statusPending": "स्थिति: लंबित",
+  "deliveryDetails": "डिलीवरी विवरण",
+  "howOften": "कितनी बार",
+  "weeklyUsesStartWeekday": "साप्ताहिक डिलीवरी आपकी शुरू तारीख के दिन का उपयोग करती है।",
+  "rateMinQty": "₹{rate}/ली · न्यून. {qty}",
+  "@rateMinQty": {
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      },
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "noCustomerReviewsYet": "अभी कोई ग्राहक समीक्षा नहीं।",
+  "pasteMapCoordinates": "मैप निर्देशांक पेस्ट करें",
+  "pasteMapsCoordsHint": "मैप्स खोलें, अपना गेट ढूँढें, फिर अक्षांश-देशांतर यहाँ कॉपी करें। मैप API कुंजी नहीं चाहिए।",
+  "usedWhenPlacingRequests": "नए दूध अनुरोध देते समय उपयोग",
+  "standAtGateMarkDrop": "गेट या दरवाज़े पर खड़े होकर ड्रॉप पॉइंट चिह्नित करें ताकि स्टाफ मैप्स खोल सके।",
+  "noMapPinYet": "अभी मैप पिन नहीं — ड्रॉप पॉइंट पर खड़े होकर चिह्नित करें",
+  "deactivateStaffBody": "वे नई डिलीवरी दर्ज या नए असाइनमेंट नहीं ले पाएँगे।",
+  "removeStaffBody": "सदस्यता REMOVED चिह्नित होगी। पुरानी डिलीवरी में यह व्यक्ति दिखता रहेगा।",
+  "dangerZone": "खतरनाक क्षेत्र",
+  "totalExtraDelivered": "कुल अतिरिक्त डिलीवर्ड: {qty}",
+  "@totalExtraDelivered": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "extraMilkColon": "अतिरिक्त दूध: {qty}",
+  "@extraMilkColon": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "customerRequestedColon": "ग्राहक ने माँगा: {qty}",
+  "@customerRequestedColon": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "regularAndExtra": "नियमित {scheduled}\nअतिरिक्त {extra}",
+  "@regularAndExtra": {
+    "placeholders": {
+      "scheduled": {
+        "type": "String"
+      },
+      "extra": {
+        "type": "String"
+      }
+    }
+  },
+  "todaysRateAppliesHint": "आज का दर नए स्टॉप पर लागू होता है और आज के बाकी डिलीवरी स्टॉप अपडेट करता है।",
+  "minColon": "न्यून.: {qty}",
+  "@minColon": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "shiftsColon": "शिफ्ट: {shifts}",
+  "@shiftsColon": {
+    "placeholders": {
+      "shifts": {
+        "type": "String"
+      }
+    }
+  },
+  "availableColon": "उपलब्ध: {value}",
+  "@availableColon": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "profilePercentComplete": "प्रोफ़ाइल {percent}% पूर्ण",
+  "@profilePercentComplete": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "milkMetricsUnavailable": "दूध मेट्रिक्स उपलब्ध नहीं",
+  "stillToCollect": "अभी वसूलना बाकी",
+  "outstandingBalanceHint": "बाकी — प्रति ग्राहक डिलीवर्ड दूध अभी बाकी। दूसरे की एडवांस यहाँ नहीं कटेगी।",
+  "advanceHeld": "एडवांस जमा",
+  "advanceHeldHint": "पहले दी गई अतिरिक्त नकद (क्रेडिट)। अलग दिखती है — दूसरे की बाकी नहीं काटती।",
+  "noAppAccountNeeded": "ऐप खाता ज़रूरी नहीं — आप उनकी दूध सूची संभालते हैं।",
+  "customerAddedGenerateHint": "ग्राहक जुड़ गया। ज़रूरत हो तो आज की डिलीवरी खोलें और जनरेट करें।",
+  "statusLifetimeDeliveries": "स्थिति: {status} · कुल डिलीवरी: {count}",
+  "@statusLifetimeDeliveries": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "editedThisWeek": "इस हफ्ते संपादित: {count}",
+  "@editedThisWeek": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "noDeliveriesTodayGenerateHint": "आज अभी कोई डिलीवरी नहीं। जनरेट लिस्ट दबाएँ, या सब्सक्रिप्शन जोड़ें।",
+  "extraSetTapDiya": "अतिरिक्त {qty} सेट। डिलीवर्ड कन्फ़र्म करने के लिए दिया दबाएँ।",
+  "@extraSetTapDiya": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "pickSingleDayToCancel": "डिलीवरी रद्द करने के लिए एक दिन चुनें (आज / कल / तारीख)।",
+  "paidColon": "भुगतान: {date}",
+  "@paidColon": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "periodColon": "अवधि: {range}",
+  "@periodColon": {
+    "placeholders": {
+      "range": {
+        "type": "String"
+      }
+    }
+  },
+  "periodUnavailable": "अवधि उपलब्ध नहीं",
+  "todayColonStats": "आज: {stats}",
+  "@todayColonStats": {
+    "placeholders": {
+      "stats": {
+        "type": "String"
+      }
+    }
+  },
+  "replacesStaffExtra": "मौजूदा स्टाफ अतिरिक्त बदलता है",
+  "couldNotLoadAddresses": "पते लोड नहीं हो सके",
+  "account": "खाता",
+  "preparingPdf": "PDF तैयार…",
+  "invitationAccepted": "आमंत्रण स्वीकार",
+  "farmInvitation": "फार्म आमंत्रण",
+  "requestUpdated": "अनुरोध अपडेट",
+  "noMilkProductsAvailable": "इस फार्म से अभी कोई दूध उत्पाद उपलब्ध नहीं।",
+  "requestPending": "अनुरोध लंबित",
+  "updateExactPoint": "सटीक बिंदु अपडेट करें",
+  "markExactDeliveryPoint": "सटीक डिलीवरी बिंदु चिह्नित करें",
+  "editCustomer": "ग्राहक संपादित करें",
+  "addCustomer": "ग्राहक जोड़ें",
+  "approvedRelative": "स्वीकृत {when}",
+  "@approvedRelative": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "startShort": "शुरू {date}",
+  "@startShort": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "couldNotBuildTodayList": "आज की सूची नहीं बनी। जनरेट लिस्ट दबाएँ।\n{error}",
+  "@couldNotBuildTodayList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "cantDeliverToCustomerTitle": "इस ग्राहक को डिलीवरी नहीं कर सकते?",
+  "cantDeliverNotifyBody": "हम {name} को बताएँगे कि {day} को दूध नहीं आएगा।",
+  "@cantDeliverNotifyBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "farmLabel": "फार्म",
+  "viewShareBillPdf": "बिल PDF देखें / शेयर करें",
+  "contactAdminResetAccess": "अभी के लिए पासवर्ड रीसेट हेतु अपने दूध वाले एडमिन से संपर्क करें।",
+  "synced": "सिंक हो गया",
+  "nPending": "{n} लंबित",
+  "deleteAccount": "खाता हटाएँ",
+  "deleteAccountConfirmTitle": "अपना खाता हटाएँ?",
+  "deleteAccountConfirmMessage": "यह आपका दूध वाला खाता स्थायी रूप से बंद कर देगा और आपको साइन आउट कर देगा। डिलीवरी और बिलिंग इतिहास फार्म के रिकॉर्ड में रह सकता है। यह वापस नहीं लिया जा सकता।",
+  "deleteAccountConfirmAction": "खाता हटाएँ",
+  "accountDeleted": "खाता हटा दिया गया",
+  "disputed": "विवादित",
+  "regularExtraLine": "नियमित {regular} · अतिरिक्त {extra}",
+  "extraYouAndStaff": "(आप {you} · स्टाफ {staff})",
+  "fromStaffSuffix": " · स्टाफ से",
+  "farmStatusActive": "सक्रिय",
+  "farmStatusPendingApproval": "अनुमोदन बाकी",
+  "farmStatusSuspended": "निलंबित",
+  "farmStatusRejected": "अस्वीकृत",
+  "farmStatusClosed": "बंद",
+  "farmStatusBlocked": "ब्लॉक",
+  "farmPendingApprovalBanner": "आपका फार्म अनुमोदन की प्रतीक्षा में है। आप सेवा क्षेत्र और उत्पाद जोड़ सकते हैं — मंज़ूरी के बाद ग्राहक आपको देखेंगे।",
+  "farmSuspendedBanner": "प्लेटफ़ॉर्म ने आपका फार्म फिलहाल निलंबित किया है।",
+  "farmRejectedBanner": "आपका फार्म आवेदन अस्वीकृत हुआ। विवरण के लिए सहायता से संपर्क करें।",
+  "farmClosedBanner": "यह फार्म बंद कर दिया गया है।",
+  "farmNotVisibleBanner": "यह फार्म अभी ग्राहकों को दिखाई नहीं देता।"
+}

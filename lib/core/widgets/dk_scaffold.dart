@@ -31,7 +31,7 @@ class DkScaffold extends StatelessWidget {
       body: body,
       floatingActionButton: floatingActionButton,
       bottomNavigationBar: bottomNavigationBar,
-      backgroundColor: AppColors.cream,
+      backgroundColor: Dk.of(context).cream,
     );
   }
 }

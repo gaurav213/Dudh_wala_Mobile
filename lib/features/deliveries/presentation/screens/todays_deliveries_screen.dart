@@ -6,6 +6,7 @@ import '../../../../core/formatters/indian_formatters.dart';
 import '../../../../core/widgets/amount_text.dart';
 import '../../../../core/widgets/dk_empty.dart';
 import '../providers/delivery_providers.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class TodaysDeliveriesScreen extends ConsumerWidget {
   const TodaysDeliveriesScreen({super.key});
@@ -14,12 +15,12 @@ class TodaysDeliveriesScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final deliveries = ref.watch(todaysDeliveriesProvider);
     return Scaffold(
-      backgroundColor: AppColors.cream,
-      appBar: AppBar(title: const Text("Today's deliveries")),
+      backgroundColor: Dk.of(context).cream,
+      appBar: AppBar(title: Text(AppLocalizations.of(context).navTodaysDeliveries)),
       body: deliveries.when(
         data: (list) {
           if (list.isEmpty) {
-            return const DkEmpty(message: 'No deliveries for today yet.');
+            return DkEmpty(message: AppLocalizations.of(context).noDeliveriesForTodayYet);
           }
           return ListView.separated(
             padding: const EdgeInsets.all(12),
@@ -29,14 +30,13 @@ class TodaysDeliveriesScreen extends ConsumerWidget {
               final d = list[i];
               final status = d['status'] as String;
               return ListTile(
-                tileColor: AppColors.milkWhite,
+                tileColor: Dk.of(context).milkWhite,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
                 title: Text(d['customer_name'] as String? ?? 'Customer'),
                 subtitle: Text(
-                  '${formatLitres(d['quantity_litres'] as num)} · ${d['slot']}',
-                ),
+                  "${formatLitres(d['quantity_litres'] as num)} · ${d['slot']}",                ),
                 trailing: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.end,

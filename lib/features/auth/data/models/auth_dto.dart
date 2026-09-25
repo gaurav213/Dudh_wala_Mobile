@@ -4,10 +4,12 @@ part 'auth_dto.g.dart';
 
 @JsonSerializable()
 class LoginRequest {
-  LoginRequest({required this.phone, required this.password});
+  LoginRequest(
+      {required this.mobileNumber, required this.password, this.deviceId});
 
-  final String phone;
+  final String mobileNumber;
   final String password;
+  final String? deviceId;
 
   factory LoginRequest.fromJson(Map<String, dynamic> json) =>
       _$LoginRequestFromJson(json);
@@ -15,24 +17,57 @@ class LoginRequest {
 }
 
 @JsonSerializable()
-class RegisterRequest {
-  RegisterRequest({
+class RegisterFarmOwnerRequest {
+  RegisterFarmOwnerRequest({
     required this.name,
-    required this.phone,
+    required this.mobileNumber,
     required this.password,
+    required this.farmName,
+    required this.addressLine1,
+    required this.area,
+    required this.city,
+    required this.state,
+    required this.postalCode,
+    this.businessName,
     this.email,
-    this.role = 'supplier',
+    this.addressLine2,
+    this.description,
   });
 
   final String name;
-  final String phone;
+  final String mobileNumber;
   final String password;
+  final String farmName;
+  final String? businessName;
+  final String? description;
   final String? email;
-  final String role;
+  final String addressLine1;
+  final String? addressLine2;
+  final String area;
+  final String city;
+  final String state;
+  final String postalCode;
 
-  factory RegisterRequest.fromJson(Map<String, dynamic> json) =>
-      _$RegisterRequestFromJson(json);
-  Map<String, dynamic> toJson() => _$RegisterRequestToJson(this);
+  factory RegisterFarmOwnerRequest.fromJson(Map<String, dynamic> json) =>
+      _$RegisterFarmOwnerRequestFromJson(json);
+  Map<String, dynamic> toJson() => _$RegisterFarmOwnerRequestToJson(this);
+}
+
+@JsonSerializable()
+class RegisterCustomerRequest {
+  RegisterCustomerRequest({
+    required this.name,
+    required this.mobileNumber,
+    required this.password,
+  });
+
+  final String name;
+  final String mobileNumber;
+  final String password;
+
+  factory RegisterCustomerRequest.fromJson(Map<String, dynamic> json) =>
+      _$RegisterCustomerRequestFromJson(json);
+  Map<String, dynamic> toJson() => _$RegisterCustomerRequestToJson(this);
 }
 
 @JsonSerializable()
@@ -40,12 +75,12 @@ class AuthTokensDto {
   AuthTokensDto({
     required this.accessToken,
     required this.refreshToken,
-    required this.user,
+    this.user,
   });
 
   final String accessToken;
   final String refreshToken;
-  final AuthUserDto user;
+  final AuthUserDto? user;
 
   factory AuthTokensDto.fromJson(Map<String, dynamic> json) =>
       _$AuthTokensDtoFromJson(json);
@@ -57,16 +92,18 @@ class AuthUserDto {
   AuthUserDto({
     required this.id,
     required this.name,
-    required this.phone,
+    required this.mobileNumber,
     required this.role,
     this.email,
+    this.avatarUrl,
   });
 
   final String id;
   final String name;
-  final String phone;
+  final String mobileNumber;
   final String role;
   final String? email;
+  final String? avatarUrl;
 
   factory AuthUserDto.fromJson(Map<String, dynamic> json) =>
       _$AuthUserDtoFromJson(json);

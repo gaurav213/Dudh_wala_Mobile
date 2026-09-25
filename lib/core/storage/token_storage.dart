@@ -1,14 +1,11 @@
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'token_storage_backend.dart';
 
 /// Tokens only — never store PII or business data here.
 class TokenStorage {
-  TokenStorage({FlutterSecureStorage? storage})
-      : _storage = storage ??
-            const FlutterSecureStorage(
-              aOptions: AndroidOptions(encryptedSharedPreferences: true),
-            );
+  TokenStorage({TokenStorageBackend? backend})
+      : _backend = backend ?? createTokenStorageBackend();
 
-  final FlutterSecureStorage _storage;
+  final TokenStorageBackend _backend;
 
   static const _accessKey = 'dk_access_token';
   static const _refreshKey = 'dk_refresh_token';
@@ -17,20 +14,24 @@ class TokenStorage {
     required String accessToken,
     required String refreshToken,
   }) async {
-    await _storage.write(key: _accessKey, value: accessToken);
-    await _storage.write(key: _refreshKey, value: refreshToken);
+    await _backend.write(_accessKey, accessToken);
+    await _backend.write(_refreshKey, refreshToken);
   }
 
-  Future<String?> readAccessToken() => _storage.read(key: _accessKey);
+  Future<String?> readAccessToken() => _backend.read(_accessKey);
 
-  Future<String?> readRefreshToken() => _storage.read(key: _refreshKey);
+  Future<String?> readRefreshToken() => _backend.read(_refreshKey);
 
   Future<void> clear() async {
-    await _storage.delete(key: _accessKey);
-    await _storage.delete(key: _refreshKey);
+    await _backend.delete(_accessKey);
+    await _backend.delete(_refreshKey);
   }
 
+  /// Session persistence is driven by the refresh token (Instagram-style).
+  /// Access tokens may expire while the refresh token remains valid.
   Future<bool> hasSession() async {
+    final refresh = await readRefreshToken();
+    if (refresh != null && refresh.isNotEmpty) return true;
     final access = await readAccessToken();
     return access != null && access.isNotEmpty;
   }

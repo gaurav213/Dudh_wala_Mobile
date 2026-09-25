@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../app/theme/app_theme.dart';
+import '../../../../l10n/app_localizations.dart';
 import '../../../customers/presentation/providers/customer_providers.dart';
 import '../providers/payment_providers.dart';
 
@@ -42,7 +43,9 @@ class _RecordPaymentScreenState extends ConsumerState<RecordPaymentScreen> {
     final amount = double.tryParse(_amount.text.trim());
     if (amount == null || amount <= 0) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Enter a valid amount')),
+        SnackBar(
+          content: Text(AppLocalizations.of(context).enterValidAmount),
+        ),
       );
       return;
     }
@@ -56,6 +59,11 @@ class _RecordPaymentScreenState extends ConsumerState<RecordPaymentScreen> {
             notes: _notes.text.trim().isEmpty ? null : _notes.text.trim(),
           );
       if (mounted) context.pop();
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text('$e')));
+      }
     } finally {
       if (mounted) setState(() => _saving = false);
     }
@@ -63,17 +71,18 @@ class _RecordPaymentScreenState extends ConsumerState<RecordPaymentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final customers = ref.watch(customersStreamProvider);
     return Scaffold(
-      backgroundColor: AppColors.cream,
-      appBar: AppBar(title: const Text('Record payment')),
+      backgroundColor: Dk.of(context).cream,
+      appBar: AppBar(title: Text(l10n.recordCash)),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           customers.when(
             data: (list) => DropdownButtonFormField<String>(
               value: _customerId,
-              decoration: const InputDecoration(labelText: 'Customer'),
+              decoration: InputDecoration(labelText: l10n.customer),
               items: [
                 for (final c in list)
                   DropdownMenuItem(
@@ -92,28 +101,28 @@ class _RecordPaymentScreenState extends ConsumerState<RecordPaymentScreen> {
           TextField(
             controller: _amount,
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
-            decoration: const InputDecoration(labelText: 'Amount (₹)'),
+            decoration: InputDecoration(labelText: l10n.amountInr),
           ),
           const SizedBox(height: 12),
           DropdownButtonFormField<String>(
             value: _method,
-            decoration: const InputDecoration(labelText: 'Method'),
-            items: const [
-              DropdownMenuItem(value: 'cash', child: Text('Cash')),
-              DropdownMenuItem(value: 'upi', child: Text('UPI')),
-              DropdownMenuItem(value: 'bank', child: Text('Bank transfer')),
+            decoration: InputDecoration(labelText: AppLocalizations.of(context).method),
+            items: [
+              DropdownMenuItem(value: 'cash', child: Text(AppLocalizations.of(context).cash)),
+              DropdownMenuItem(value: 'upi', child: Text(AppLocalizations.of(context).upi)),
+              DropdownMenuItem(value: 'bank', child: Text(AppLocalizations.of(context).bankTransfer)),
             ],
             onChanged: (v) => setState(() => _method = v ?? 'cash'),
           ),
           const SizedBox(height: 12),
           TextField(
             controller: _notes,
-            decoration: const InputDecoration(labelText: 'Notes'),
+            decoration: InputDecoration(labelText: l10n.notes),
           ),
           const SizedBox(height: 24),
           FilledButton(
             onPressed: _saving ? null : _save,
-            child: Text(_saving ? 'Saving…' : 'Save payment'),
+            child: Text(_saving ? l10n.saving : l10n.save),
           ),
         ],
       ),

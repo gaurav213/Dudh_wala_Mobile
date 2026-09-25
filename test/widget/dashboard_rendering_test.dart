@@ -34,7 +34,7 @@ void main() {
                 id: 's1',
                 name: 'Gaurav Dairy',
                 phone: '9000000000',
-                role: UserRole.supplier,
+                role: UserRole.farmOwner,
               ),
             ),
           ),
@@ -50,10 +50,11 @@ void main() {
       ),
     );
 
-    await tester.pumpAndSettle();
-    expect(find.text('Doodh Khata'), findsOneWidget);
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
+    expect(find.text('Doodh Wala'), findsOneWidget);
     expect(find.text('Customers'), findsWidgets);
-    expect(find.textContaining('Quick actions'), findsOneWidget);
+    expect(find.text('Today litres'), findsOneWidget);
   });
 }
 
@@ -68,6 +69,9 @@ class _NoopRepo implements AuthRepository {
   Future<void> logout() async {}
 
   @override
+  Future<void> clearLocalSession() async {}
+
+  @override
   Future<UserEntity> login({required String phone, required String password}) {
     throw UnimplementedError();
   }
@@ -76,11 +80,27 @@ class _NoopRepo implements AuthRepository {
   Future<bool> refreshSession() async => false;
 
   @override
-  Future<UserEntity> registerSupplier({
+  Future<UserEntity> registerFarmOwner({
     required String name,
     required String phone,
     required String password,
+    required String farmName,
+    required String addressLine1,
+    required String area,
+    required String city,
+    required String state,
+    required String postalCode,
+    String? businessName,
     String? email,
+  }) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<UserEntity> registerCustomer({
+    required String name,
+    required String phone,
+    required String password,
   }) {
     throw UnimplementedError();
   }

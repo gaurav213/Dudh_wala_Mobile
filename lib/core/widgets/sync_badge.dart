@@ -3,12 +3,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../sync/sync_service.dart';
 import '../../app/theme/app_theme.dart';
+import '../../l10n/app_localizations.dart';
 
 class SyncBadge extends ConsumerWidget {
   const SyncBadge({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     final sync = ref.watch(syncStateProvider);
     return sync.when(
       data: (s) {
@@ -19,10 +21,9 @@ class SyncBadge extends ConsumerWidget {
         };
         return IconButton(
           tooltip: s.queueCount > 0
-              ? '${s.queueCount} pending'
-              : 'Synced',
-          onPressed: () =>
-              ref.read(syncServiceProvider).syncNow(),
+              ? l10n.nPending(s.queueCount)
+              : l10n.synced,
+          onPressed: () => ref.read(syncServiceProvider).syncNow(),
           icon: Icon(Icons.sync, color: color),
         );
       },

@@ -12,15 +12,16 @@ final billingRepositoryProvider = Provider<BillingRepository>((ref) {
   );
 });
 
-final billPdfServiceProvider = Provider<BillPdfService>((ref) => BillPdfService());
+final billPdfServiceProvider =
+    Provider<BillPdfService>((ref) => BillPdfService());
 
 final billsProvider =
-    FutureProvider.family<List<Map<String, Object?>>, String?>((ref, customerId) {
+    FutureProvider.family<List<Map<String, Object?>>, String?>(
+        (ref, customerId) {
   return ref.watch(billingRepositoryProvider).list(customerId: customerId);
 });
 
-final outstandingProvider =
-    FutureProvider<List<Map<String, Object?>>>((ref) {
+final outstandingProvider = FutureProvider<List<Map<String, Object?>>>((ref) {
   return ref.watch(billingRepositoryProvider).outstanding();
 });
 

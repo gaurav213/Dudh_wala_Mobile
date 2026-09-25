@@ -7,6 +7,7 @@ import '../../../../app/theme/app_theme.dart';
 import '../../../../core/formatters/indian_formatters.dart';
 import '../../../../core/widgets/amount_text.dart';
 import '../providers/customer_providers.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class CustomerDetailsScreen extends ConsumerWidget {
   const CustomerDetailsScreen({super.key, required this.customerId});
@@ -17,9 +18,9 @@ class CustomerDetailsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final customer = ref.watch(customerDetailProvider(customerId));
     return Scaffold(
-      backgroundColor: AppColors.cream,
+      backgroundColor: Dk.of(context).cream,
       appBar: AppBar(
-        title: const Text('Customer'),
+        title: Text(AppLocalizations.of(context).customer),
         actions: [
           IconButton(
             icon: const Icon(Icons.edit_outlined),
@@ -30,7 +31,7 @@ class CustomerDetailsScreen extends ConsumerWidget {
       ),
       body: customer.when(
         data: (c) {
-          if (c == null) return const Center(child: Text('Not found'));
+          if (c == null) return Center(child: Text(AppLocalizations.of(context).notFound));
           return ListView(
             padding: const EdgeInsets.all(16),
             children: [
@@ -41,14 +42,14 @@ class CustomerDetailsScreen extends ConsumerWidget {
               if (c['address'] != null) ...[
                 const SizedBox(height: 8),
                 Text(c['address'] as String,
-                    style: TextStyle(color: AppColors.muted)),
+                    style: TextStyle(color: Dk.of(context).muted)),
               ],
               const SizedBox(height: 16),
               ListTile(
-                tileColor: AppColors.milkWhite,
+                tileColor: Dk.of(context).milkWhite,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12)),
-                title: const Text('Default rate'),
+                title: Text(AppLocalizations.of(context).defaultRate),
                 trailing: AmountText(c['default_rate_per_litre'] as num),
               ),
               const SizedBox(height: 12),
@@ -56,21 +57,21 @@ class CustomerDetailsScreen extends ConsumerWidget {
                 onPressed: () => context.push(
                   '${AppRoutes.subscriptionForm}?customerId=$customerId',
                 ),
-                child: const Text('Add subscription'),
+                child: Text(AppLocalizations.of(context).addSubscription),
               ),
               const SizedBox(height: 8),
               OutlinedButton(
                 onPressed: () => context.push(
                   '${AppRoutes.generateBill}?customerId=$customerId',
                 ),
-                child: const Text('Generate bill'),
+                child: Text(AppLocalizations.of(context).generateBill),
               ),
               const SizedBox(height: 8),
               OutlinedButton(
                 onPressed: () => context.push(
                   '${AppRoutes.recordPayment}?customerId=$customerId',
                 ),
-                child: const Text('Record payment'),
+                child: Text(AppLocalizations.of(context).recordPayment),
               ),
             ],
           );

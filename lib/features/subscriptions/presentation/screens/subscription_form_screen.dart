@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../app/theme/app_theme.dart';
 import '../providers/subscription_providers.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class SubscriptionFormScreen extends ConsumerStatefulWidget {
   const SubscriptionFormScreen({
@@ -39,7 +40,7 @@ class _SubscriptionFormScreenState
     final customerId = widget.customerId;
     if (customerId == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Customer is required')),
+        SnackBar(content: Text(AppLocalizations.of(context).customerRequired)),
       );
       return;
     }
@@ -72,7 +73,7 @@ class _SubscriptionFormScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.cream,
+      backgroundColor: Dk.of(context).cream,
       appBar: AppBar(
         title: Text(
           widget.subscriptionId == null
@@ -86,39 +87,40 @@ class _SubscriptionFormScreenState
           TextField(
             controller: _qty,
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
-            decoration: const InputDecoration(labelText: 'Quantity (litres)'),
+            decoration: InputDecoration(labelText: AppLocalizations.of(context).quantityLitres),
           ),
           const SizedBox(height: 12),
           TextField(
             controller: _rate,
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
-            decoration: const InputDecoration(labelText: 'Rate / litre (₹)'),
+            decoration: InputDecoration(labelText: AppLocalizations.of(context).ratePerLitreInr),
           ),
           const SizedBox(height: 12),
           DropdownButtonFormField<String>(
             value: _frequency,
-            decoration: const InputDecoration(labelText: 'Frequency'),
-            items: const [
-              DropdownMenuItem(value: 'daily', child: Text('Daily')),
-              DropdownMenuItem(value: 'alternate', child: Text('Alternate days')),
-              DropdownMenuItem(value: 'custom', child: Text('Custom')),
+            decoration: InputDecoration(labelText: AppLocalizations.of(context).frequency),
+            items: [
+              DropdownMenuItem(value: 'daily', child: Text(AppLocalizations.of(context).daily)),
+              DropdownMenuItem(
+                  value: 'alternate', child: Text(AppLocalizations.of(context).alternateDays)),
+              DropdownMenuItem(value: 'custom', child: Text(AppLocalizations.of(context).custom)),
             ],
             onChanged: (v) => setState(() => _frequency = v ?? 'daily'),
           ),
           const SizedBox(height: 12),
           DropdownButtonFormField<String>(
             value: _slot,
-            decoration: const InputDecoration(labelText: 'Delivery slot'),
-            items: const [
-              DropdownMenuItem(value: 'morning', child: Text('Morning')),
-              DropdownMenuItem(value: 'evening', child: Text('Evening')),
+            decoration: InputDecoration(labelText: AppLocalizations.of(context).deliverySlot),
+            items: [
+              DropdownMenuItem(value: 'morning', child: Text(AppLocalizations.of(context).morning)),
+              DropdownMenuItem(value: 'evening', child: Text(AppLocalizations.of(context).evening)),
             ],
             onChanged: (v) => setState(() => _slot = v ?? 'morning'),
           ),
           const SizedBox(height: 24),
           FilledButton(
             onPressed: _saving ? null : _save,
-            child: Text(_saving ? 'Saving…' : 'Save subscription'),
+            child: Text(_saving ? AppLocalizations.of(context).saving : 'Save subscription'),
           ),
         ],
       ),

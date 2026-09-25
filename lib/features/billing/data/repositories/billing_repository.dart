@@ -36,7 +36,8 @@ class BillingRepository {
     );
   }
 
-  Future<String> generateFromPreview(BillPreview preview, {required String billNumber}) async {
+  Future<String> generateFromPreview(BillPreview preview,
+      {required String billNumber}) async {
     final id = await _db.insertBill(
       customerId: preview.customerId,
       billNumber: billNumber,

@@ -12,6 +12,7 @@ final paymentRepositoryProvider = Provider<PaymentRepository>((ref) {
 });
 
 final paymentsProvider =
-    FutureProvider.family<List<Map<String, Object?>>, String?>((ref, customerId) {
+    FutureProvider.family<List<Map<String, Object?>>, String?>(
+        (ref, customerId) {
   return ref.watch(paymentRepositoryProvider).list(customerId: customerId);
 });

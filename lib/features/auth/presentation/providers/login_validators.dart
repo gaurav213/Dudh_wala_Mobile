@@ -20,4 +20,11 @@ class LoginValidators {
     if (v.length < 2) return 'Enter a valid name';
     return null;
   }
+
+  static String? postalCode(String? value) {
+    final v = value?.trim() ?? '';
+    if (v.isEmpty) return 'Postal code is required';
+    if (v.length < 4) return 'Enter a valid postal code';
+    return null;
+  }
 }

@@ -11,6 +11,6 @@ class CustomerBillsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final userId = ref.watch(authControllerProvider).user?.id;
-    return BillsListScreen(customerId: userId);
+    return BillsListScreen(customerId: userId, readOnly: true);
   }
 }

@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../app/theme/app_theme.dart';
 import '../../../../core/formatters/indian_formatters.dart';
 import '../../../../core/sync/sync_service.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class SyncStatusScreen extends ConsumerWidget {
   const SyncStatusScreen({super.key});
@@ -13,22 +14,22 @@ class SyncStatusScreen extends ConsumerWidget {
     final sync = ref.watch(syncStateProvider);
     final service = ref.watch(syncServiceProvider);
     return Scaffold(
-      backgroundColor: AppColors.cream,
-      appBar: AppBar(title: const Text('Sync status')),
+      backgroundColor: Dk.of(context).cream,
+      appBar: AppBar(title: Text(AppLocalizations.of(context).syncStatus)),
       body: sync.when(
         data: (s) => ListView(
           padding: const EdgeInsets.all(16),
           children: [
             ListTile(
-              title: const Text('Phase'),
+              title: Text(AppLocalizations.of(context).phase),
               trailing: Text(s.phase.name),
             ),
             ListTile(
-              title: const Text('Queue'),
-              trailing: Text('${s.queueCount}'),
+              title: Text(AppLocalizations.of(context).queue),
+              trailing: Text("${s.queueCount}"),
             ),
             ListTile(
-              title: const Text('Last synced'),
+              title: Text(AppLocalizations.of(context).lastSynced),
               trailing: Text(
                 s.lastSyncedAt == null
                     ? 'Never'
@@ -37,13 +38,13 @@ class SyncStatusScreen extends ConsumerWidget {
             ),
             if (s.lastError != null)
               ListTile(
-                title: const Text('Last error'),
+                title: Text(AppLocalizations.of(context).lastError),
                 subtitle: Text(s.lastError!),
               ),
             const SizedBox(height: 16),
             FilledButton(
               onPressed: () => service.syncNow(),
-              child: const Text('Sync now'),
+              child: Text(AppLocalizations.of(context).syncNow),
             ),
           ],
         ),
@@ -51,16 +52,16 @@ class SyncStatusScreen extends ConsumerWidget {
           padding: const EdgeInsets.all(16),
           children: [
             ListTile(
-              title: const Text('Phase'),
+              title: Text(AppLocalizations.of(context).phase),
               trailing: Text(service.state.phase.name),
             ),
             ListTile(
-              title: const Text('Queue'),
-              trailing: Text('${service.state.queueCount}'),
+              title: Text(AppLocalizations.of(context).queue),
+              trailing: Text("${service.state.queueCount}"),
             ),
             FilledButton(
               onPressed: () => service.syncNow(),
-              child: const Text('Sync now'),
+              child: Text(AppLocalizations.of(context).syncNow),
             ),
           ],
         ),

@@ -19,9 +19,10 @@ void main() {
   });
 
   group('LoginValidators.password', () {
-    test('requires min length', () {
+    test('requires min length 8', () {
       expect(LoginValidators.password('123'), isNotNull);
-      expect(LoginValidators.password('secret1'), isNull);
+      expect(LoginValidators.password('secret1'), isNotNull);
+      expect(LoginValidators.password('secret12'), isNull);
     });
   });
 }

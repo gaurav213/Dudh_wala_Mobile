@@ -45,7 +45,8 @@ class Subscriptions extends Table {
   RealColumn get quantityLitres => real()();
   RealColumn get ratePerLitre => real()();
   TextColumn get frequency => text()(); // daily | alternate | custom
-  TextColumn get deliverySlot => text().withDefault(const Constant('morning'))();
+  TextColumn get deliverySlot =>
+      text().withDefault(const Constant('morning'))();
   DateTimeColumn get startDate => dateTime()();
   DateTimeColumn get endDate => dateTime().nullable()();
   BoolColumn get isActive => boolean().withDefault(const Constant(true))();
@@ -67,8 +68,8 @@ class Deliveries extends Table {
   RealColumn get quantityLitres => real()();
   RealColumn get ratePerLitre => real()();
   RealColumn get amount => real()();
-  TextColumn get status =>
-      text().withDefault(const Constant('pending'))(); // pending|delivered|skipped|partial
+  TextColumn get status => text().withDefault(
+      const Constant('pending'))(); // pending|delivered|skipped|partial
   TextColumn get notes => text().nullable()();
   TextColumn get syncStatus => text().withDefault(const Constant('PENDING'))();
   DateTimeColumn get updatedAt => dateTime()();
@@ -89,8 +90,8 @@ class Bills extends Table {
   RealColumn get adjustments => real().withDefault(const Constant(0))();
   RealColumn get total => real()();
   RealColumn get paidAmount => real().withDefault(const Constant(0))();
-  TextColumn get status =>
-      text().withDefault(const Constant('draft'))(); // draft|issued|partial|paid
+  TextColumn get status => text()
+      .withDefault(const Constant('draft'))(); // draft|issued|partial|paid
   TextColumn get syncStatus => text().withDefault(const Constant('PENDING'))();
   DateTimeColumn get updatedAt => dateTime()();
   DateTimeColumn get createdAt => dateTime()();

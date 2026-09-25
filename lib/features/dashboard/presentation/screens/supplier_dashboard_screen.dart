@@ -6,9 +6,12 @@ import '../../../../app/routes.dart';
 import '../../../../app/theme/app_theme.dart';
 import '../../../../core/formatters/indian_formatters.dart';
 import '../../../../core/widgets/amount_text.dart';
+import '../../../../core/widgets/notification_bell_action.dart';
+import '../../../../core/widgets/dk_skeleton.dart';
 import '../../../../core/widgets/sync_badge.dart';
 import '../../../auth/presentation/providers/auth_provider.dart';
 import '../providers/dashboard_providers.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class SupplierDashboardScreen extends ConsumerWidget {
   const SupplierDashboardScreen({super.key});
@@ -19,12 +22,12 @@ class SupplierDashboardScreen extends ConsumerWidget {
     final user = ref.watch(authControllerProvider).user;
 
     return Scaffold(
-      backgroundColor: AppColors.cream,
+      backgroundColor: Dk.of(context).cream,
       appBar: AppBar(
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Doodh Khata'),
+            Text(AppLocalizations.of(context).appTitle),
             Text(
               user?.name ?? 'Supplier',
               style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
@@ -33,6 +36,7 @@ class SupplierDashboardScreen extends ConsumerWidget {
         ),
         actions: [
           const SyncBadge(),
+          NotificationBellAction(route: AppRoutes.notifications),
           IconButton(
             icon: const Icon(Icons.settings_outlined),
             onPressed: () => context.push(AppRoutes.settings),
@@ -40,25 +44,32 @@ class SupplierDashboardScreen extends ConsumerWidget {
         ],
       ),
       body: RefreshIndicator(
+        color: AppColors.leaf,
         onRefresh: () async {
           ref.invalidate(dashboardStatsProvider);
-          await ref.read(dashboardStatsProvider.future);
+          try {
+            await ref.read(dashboardStatsProvider.future);
+          } catch (_) {}
         },
         child: ListView(
+          physics: const AlwaysScrollableScrollPhysics(),
           padding: const EdgeInsets.all(16),
           children: [
             Text(
-              'Today · ${formatDate(DateTime.now())}',
+              AppLocalizations.of(context).todayDotDate(formatDate(DateTime.now())),
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 12),
             stats.when(
+              skipLoadingOnReload: true,
+              skipLoadingOnRefresh: true,
               data: (s) => _StatsGrid(stats: s),
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (e, _) => Text('Error: $e'),
+              loading: () => DkSkeleton.supplierStatsGrid(),
+              error: (_, __) => DkSkeleton.supplierStatsGrid(),
             ),
             const SizedBox(height: 20),
-            Text('Quick actions', style: Theme.of(context).textTheme.titleMedium),
+            Text(AppLocalizations.of(context).quickActions,
+                style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 8),
             Wrap(
               spacing: 8,
@@ -117,7 +128,8 @@ class _StatsGrid extends StatelessWidget {
       crossAxisSpacing: 10,
       childAspectRatio: 1.45,
       children: [
-        _StatTile(label: 'Customers', value: '${stats['customers']?.toInt() ?? 0}'),
+        _StatTile(
+            label: 'Customers', value: '${stats['customers']?.toInt() ?? 0}'),
         _StatTile(
           label: 'Today litres',
           value: formatLitres(stats['today_litres'] ?? 0),
@@ -147,14 +159,15 @@ class _StatTile extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: AppColors.milkWhite,
+        color: Dk.of(context).milkWhite,
         borderRadius: BorderRadius.circular(14),
         border: Border.all(color: AppColors.leaf.withOpacity(0.08)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(label, style: TextStyle(color: AppColors.muted, fontSize: 13)),
+          Text(label,
+              style: TextStyle(color: Dk.of(context).muted, fontSize: 13)),
           const Spacer(),
           valueWidget ??
               Text(

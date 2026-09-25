@@ -18,7 +18,8 @@ class SubscriptionRepository {
       operation: 'create',
       payload: {
         'id': id,
-        ...row.map((k, v) => MapEntry(k, v is DateTime ? v.toIso8601String() : v)),
+        ...row.map(
+            (k, v) => MapEntry(k, v is DateTime ? v.toIso8601String() : v)),
       },
     );
     return id;

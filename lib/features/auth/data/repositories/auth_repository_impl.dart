@@ -1,7 +1,8 @@
 import 'package:uuid/uuid.dart';
 
-import '../../../../core/api/api_client.dart';
+import '../../../../core/auth/jwt_utils.dart';
 import '../../../../core/database/app_database.dart';
+import '../../../../core/environment/app_environment.dart';
 import '../../../../core/errors/app_exception.dart';
 import '../../../../core/storage/token_storage.dart';
 import '../../domain/entities/user_entity.dart';
@@ -14,7 +15,6 @@ class AuthRepositoryImpl implements AuthRepository {
     required AppDatabase db,
     required TokenStorage tokens,
     required AuthRemoteSource remote,
-    ApiClient? api,
   })  : _db = db,
         _tokens = tokens,
         _remote = remote;
@@ -24,13 +24,54 @@ class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteSource _remote;
   static const _uuid = Uuid();
 
+  bool get _allowOfflineDemo => AppEnvironment.current.isDev;
+
+  String _normalizeMobile(String phone) {
+    final digits = phone.replaceAll(RegExp(r'\D'), '');
+    if (digits.length == 10) return '91$digits';
+    return digits;
+  }
+
+  UserEntity _userFromDto(AuthUserDto profile) => UserEntity(
+        id: profile.id,
+        remoteId: profile.id,
+        name: profile.name,
+        phone: profile.mobileNumber,
+        email: profile.email,
+        avatarUrl: profile.avatarUrl,
+        role: UserEntity.roleFromApi(profile.role),
+      );
+
   @override
   Future<UserEntity?> restoreSession() async {
     final has = await _tokens.hasSession();
     if (!has) return null;
+
+    final refresh = await _tokens.readRefreshToken();
+    final access = await _tokens.readAccessToken();
+
+    // Access may be expired while refresh is still valid — renew quietly.
+    if (refresh != null &&
+        refresh.isNotEmpty &&
+        refresh != 'local-refresh' &&
+        JwtUtils.isExpiredOrExpiring(access)) {
+      final ok = await refreshSession();
+      if (!ok) return null;
+    }
+
     final row = await _db.getAppUser();
-    if (row == null) return null;
-    return UserEntity.fromMap(row);
+    if (row != null) return UserEntity.fromMap(row);
+
+    // Tokens exist but local user row missing (e.g. reinstall kept keychain).
+    try {
+      final profile = await _remote.profile();
+      final user = _userFromDto(profile);
+      await _db.upsertAppUser(user.toMap());
+      return user;
+    } catch (_) {
+      await _tokens.clear();
+      return null;
+    }
   }
 
   @override
@@ -38,42 +79,94 @@ class AuthRepositoryImpl implements AuthRepository {
     required String phone,
     required String password,
   }) async {
+    final mobileNumber = _normalizeMobile(phone);
     try {
       final dto = await _remote.login(
-        LoginRequest(phone: phone, password: password),
+        LoginRequest(mobileNumber: mobileNumber, password: password),
       );
       return _persistSession(dto);
     } on NetworkException {
-      // Offline demo fallback for local MVP when API unreachable.
-      return _localLoginFallback(phone: phone);
+      if (!_allowOfflineDemo) rethrow;
+      return _localLoginFallback(phone: mobileNumber);
     }
   }
 
   @override
-  Future<UserEntity> registerSupplier({
+  Future<UserEntity> registerFarmOwner({
     required String name,
     required String phone,
     required String password,
+    required String farmName,
+    required String addressLine1,
+    required String area,
+    required String city,
+    required String state,
+    required String postalCode,
+    String? businessName,
     String? email,
   }) async {
+    final mobileNumber = _normalizeMobile(phone);
     try {
-      final dto = await _remote.register(
-        RegisterRequest(
+      final dto = await _remote.registerFarmOwner(
+        RegisterFarmOwnerRequest(
           name: name,
-          phone: phone,
+          mobileNumber: mobileNumber,
           password: password,
+          farmName: farmName,
+          addressLine1: addressLine1,
+          area: area,
+          city: city,
+          state: state,
+          postalCode: postalCode,
+          businessName: businessName,
           email: email,
-          role: 'supplier',
         ),
       );
       return _persistSession(dto);
     } on NetworkException {
+      if (!_allowOfflineDemo) rethrow;
       final user = UserEntity(
         id: _uuid.v4(),
         name: name,
-        phone: phone,
+        phone: mobileNumber,
         email: email,
-        role: UserRole.supplier,
+        role: UserRole.farmOwner,
+      );
+      await _tokens.saveTokens(
+        accessToken: 'local-access',
+        refreshToken: 'local-refresh',
+      );
+      await _db.upsertAppUser({
+        ...user.toMap(),
+        'sync_status': 'LOCAL_ONLY',
+      });
+      return user;
+    }
+  }
+
+  @override
+  Future<UserEntity> registerCustomer({
+    required String name,
+    required String phone,
+    required String password,
+  }) async {
+    final mobileNumber = _normalizeMobile(phone);
+    try {
+      final dto = await _remote.registerCustomer(
+        RegisterCustomerRequest(
+          name: name,
+          mobileNumber: mobileNumber,
+          password: password,
+        ),
+      );
+      return _persistSession(dto);
+    } on NetworkException {
+      if (!_allowOfflineDemo) rethrow;
+      final user = UserEntity(
+        id: _uuid.v4(),
+        name: name,
+        phone: mobileNumber,
+        role: UserRole.customer,
       );
       await _tokens.saveTokens(
         accessToken: 'local-access',
@@ -106,16 +199,11 @@ class AuthRepositoryImpl implements AuthRepository {
       accessToken: dto.accessToken,
       refreshToken: dto.refreshToken,
     );
-    final user = UserEntity(
-      id: dto.user.id,
-      remoteId: dto.user.id,
-      name: dto.user.name,
-      phone: dto.user.phone,
-      email: dto.user.email,
-      role: dto.user.role.toLowerCase() == 'customer'
-          ? UserRole.customer
-          : UserRole.supplier,
-    );
+    final apiUser = dto.user;
+    if (apiUser == null) {
+      throw const AuthException('Auth response missing user');
+    }
+    final user = _userFromDto(apiUser);
     await _db.upsertAppUser(user.toMap());
     return user;
   }
@@ -127,16 +215,63 @@ class AuthRepositoryImpl implements AuthRepository {
     if (refresh == 'local-refresh') return true;
     try {
       final dto = await _remote.refresh(refresh);
-      await _persistSession(dto);
+      await _tokens.saveTokens(
+        accessToken: dto.accessToken,
+        refreshToken: dto.refreshToken,
+      );
+      if (dto.user != null) {
+        await _db.upsertAppUser(_userFromDto(dto.user!).toMap());
+      }
       return true;
     } catch (_) {
+      await _tokens.clear();
       return false;
     }
   }
 
   @override
+  Future<bool> hasSession() => _tokens.hasSession();
+
+  @override
   Future<void> logout() async {
+    final refresh = await _tokens.readRefreshToken();
+    if (refresh != null &&
+        refresh.isNotEmpty &&
+        refresh != 'local-refresh') {
+      try {
+        await _remote.logout(refresh);
+      } catch (_) {
+        // Best-effort revoke; always clear local session.
+      }
+    }
+    await clearLocalSession();
+  }
+
+  @override
+  Future<void> clearLocalSession() async {
     await _tokens.clear();
     await _db.clearUserData();
+  }
+
+  @override
+  Future<UserEntity> updateProfile({String? name, String? email}) async {
+    final profile = await _remote.updateProfile(name: name, email: email);
+    final user = _userFromDto(profile);
+    await _db.upsertAppUser(user.toMap());
+    return user;
+  }
+
+  @override
+  Future<UserEntity> uploadAvatar(String filePath) async {
+    final profile = await _remote.uploadAvatar(filePath);
+    final user = _userFromDto(profile);
+    await _db.upsertAppUser(user.toMap());
+    return user;
+  }
+
+  @override
+  Future<void> deleteAccount() async {
+    await _remote.deleteAccount();
+    await clearLocalSession();
   }
 }

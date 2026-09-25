@@ -12,6 +12,7 @@ final subscriptionRepositoryProvider = Provider<SubscriptionRepository>((ref) {
 });
 
 final subscriptionsProvider =
-    FutureProvider.family<List<Map<String, Object?>>, String?>((ref, customerId) {
+    FutureProvider.family<List<Map<String, Object?>>, String?>(
+        (ref, customerId) {
   return ref.watch(subscriptionRepositoryProvider).list(customerId: customerId);
 });

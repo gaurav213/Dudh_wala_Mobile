@@ -90,6 +90,8 @@ app.*.map.json
 **/secrets/
 google-services.json
 GoogleService-Info.plist
+dart_defines/production.json
+dart_defines/staging.json
 
 # FVM
 .fvm/flutter_sdk

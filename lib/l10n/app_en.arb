@@ -1,0 +1,1294 @@
+{
+  "@@locale": "en",
+  "appTitle": "Doodh Wala",
+  "settings": "Settings",
+  "appearance": "Appearance",
+  "language": "Language",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "themeSystem": "System",
+  "themeSystemHint": "System follows your device setting.",
+  "langEnglish": "English",
+  "langHindi": "हिंदी",
+  "langMarathi": "मराठी",
+  "environment": "Environment",
+  "apiBaseUrl": "API base URL",
+  "syncStatus": "Sync status",
+  "conflictResolution": "Conflict resolution",
+  "profile": "Profile",
+  "logOut": "Log out",
+  "logOutConfirmTitle": "Log out?",
+  "logOutConfirmMessage": "Are you sure you want to log out?",
+  "yes": "Yes",
+  "no": "No",
+  "signOut": "Sign out",
+  "signIn": "Sign in",
+  "signingIn": "Signing in…",
+  "loginFailed": "Login failed",
+  "register": "Register",
+  "registering": "Registering…",
+  "createAccount": "Create account",
+  "alreadyHaveAccount": "Already have an account? Sign in",
+  "mobileNumber": "Mobile number",
+  "password": "Password",
+  "name": "Name",
+  "emailOptional": "Email (optional)",
+  "save": "Save",
+  "saving": "Saving…",
+  "saved": "Saved",
+  "edit": "Edit",
+  "delete": "Delete",
+  "add": "Add",
+  "update": "Update",
+  "search": "Search",
+  "filter": "Filter",
+  "all": "All",
+  "open": "Open",
+  "close": "Close",
+  "back": "Back",
+  "next": "Next",
+  "done": "Done",
+  "retry": "Retry",
+  "loading": "Loading…",
+  "refresh": "Refresh",
+  "details": "Details",
+  "status": "Status",
+  "notes": "Notes",
+  "notesOptional": "Notes (optional)",
+  "optional": "Optional",
+  "required": "Required",
+  "call": "Call",
+  "map": "Map",
+  "address": "Address",
+  "city": "City",
+  "state": "State",
+  "postalCode": "Postal code",
+  "defaultLabel": "Default",
+  "active": "Active",
+  "blocked": "Blocked",
+  "pending": "Pending",
+  "delivered": "Delivered",
+  "skipped": "Skipped",
+  "cancelled": "Cancelled",
+  "failed": "Failed",
+  "outForDelivery": "Out for delivery",
+  "customer": "Customer",
+  "customers": "Customers",
+  "farm": "Farm",
+  "farms": "Farms",
+  "milk": "Milk",
+  "delivery": "Delivery",
+  "deliveries": "Deliveries",
+  "quantityL": "Quantity (L)",
+  "litres": "litres",
+  "shift": "Shift",
+  "morning": "Morning",
+  "evening": "Evening",
+  "afternoon": "Afternoon",
+  "milkType": "Milk type",
+  "ratePerLitre": "Rate / L",
+  "amount": "Amount",
+  "amountInr": "Amount (₹)",
+  "payment": "Payment",
+  "payments": "Payments",
+  "bills": "Bills",
+  "billing": "Billing",
+  "outstanding": "Outstanding",
+  "generate": "Generate",
+  "generateBill": "Generate bill",
+  "generateList": "Generate list",
+  "cantDeliver": "Can't deliver",
+  "skip": "Skip",
+  "keepMilk": "Keep milk",
+  "noMilk": "No milk",
+  "noMilkThisDay": "No milk this day",
+  "wantMilkAgain": "I want milk again",
+  "farmNotifiedSkipped": "Farm notified — milk skipped",
+  "farmNotifiedRestored": "Farm notified — milk restored",
+  "day": "Day",
+  "period": "Period",
+  "from": "From",
+  "to": "To",
+  "thisWeek": "This week",
+  "thisMonth": "This month",
+  "pickDate": "Pick a date",
+  "customDay": "Custom day",
+  "manage": "Manage",
+  "managed": "Managed",
+  "extra": "Extra",
+  "extraMilk": "Extra milk",
+  "lessMilk": "Less milk",
+  "markDelivered": "Mark delivered",
+  "recordCash": "Record cash",
+  "out": "Out",
+  "fail": "Fail",
+  "approve": "Approve",
+  "invite": "Invite",
+  "accept": "Accept",
+  "decline": "Decline",
+  "send": "Send",
+  "submitRequest": "Submit request",
+  "cancelRequest": "Cancel request",
+  "cancelRequestTitle": "Cancel request?",
+  "cancelRequestBody": "Are you sure you want to cancel this request?",
+  "findFarms": "Find farms",
+  "connected": "Connected",
+  "subscription": "Subscription",
+  "subscriptions": "Subscriptions",
+  "notifications": "Notifications",
+  "noNotifications": "No notifications yet",
+  "markAllRead": "Mark all read",
+  "unread": "Unread",
+  "view": "View",
+  "none": "None",
+  "or": "or",
+  "and": "and",
+  "more": "More",
+  "less": "Less",
+  "total": "Total",
+  "remaining": "Remaining",
+  "collected": "Collected",
+  "earned": "Earned",
+  "photo": "Photo",
+  "camera": "Camera",
+  "gallery": "Gallery",
+  "upload": "Upload",
+  "download": "Download",
+  "share": "Share",
+  "copy": "Copy",
+  "copied": "Copied",
+  "select": "Select",
+  "selected": "Selected",
+  "clear": "Clear",
+  "apply": "Apply",
+  "reset": "Reset",
+  "continueAction": "Continue",
+  "gotIt": "Got it",
+  "ok": "OK",
+  "error": "Error",
+  "success": "Success",
+  "warning": "Warning",
+  "info": "Info",
+  "somethingWentWrong": "Something went wrong",
+  "pleaseTryAgain": "Please try again",
+  "noInternet": "Internet connection unavailable",
+  "unableToReachServer": "Unable to reach server. Check your connection and try again.",
+  "incorrectCredentials": "Incorrect mobile number or password.",
+  "accountBlocked": "This account is blocked. Contact support.",
+  "accountNotActive": "This account is not active yet.",
+  "signInFailed": "Sign in failed. Please try again.",
+  "registrationFailed": "Registration failed",
+  "enterValidAmount": "Enter a valid amount.",
+  "enterValidQuantity": "Enter a valid quantity.",
+  "fieldRequired": "This field is required",
+  "nameRequired": "Please enter name",
+  "mobileRequired": "Please enter mobile number",
+  "passwordRequired": "Please enter password",
+  "invalidMobile": "Enter a valid 10-digit mobile number",
+  "noData": "No data",
+  "emptyDefault": "Nothing here yet",
+  "couldNotLoad": "Could not load",
+  "pullToRefresh": "Pull to refresh",
+  "navHome": "Home",
+  "navFarms": "Farms",
+  "navFindFarms": "Find farms",
+  "navAddresses": "Addresses",
+  "navInbox": "Requests",
+  "navProfile": "Profile",
+  "navDashboard": "Dashboard",
+  "navTodaysDeliveries": "Today's deliveries",
+  "navCustomers": "Customers",
+  "navPendingCash": "Pending cash",
+  "navSettings": "Settings",
+  "navFarmProfile": "Farm profile",
+  "navServiceAreas": "Service areas",
+  "navProducts": "Products",
+  "navMilkProducts": "Milk products",
+  "navRequests": "Requests",
+  "navCustomerRequests": "Customer requests",
+  "navInvitations": "Invitations",
+  "navCustomerInvitations": "Customer invitations",
+  "navFarmInvitations": "Farm invitations",
+  "navStaff": "Staff",
+  "navDeliveryStaff": "Delivery staff",
+  "navExtraRequests": "Extra requests",
+  "navCollections": "Collections",
+  "navHistory": "History",
+  "navRateCustomers": "Rate customers",
+  "navNotifications": "Notifications",
+  "navBilling": "Billing",
+  "navBills": "Bills",
+  "navPayments": "Payments",
+  "navReports": "Reports",
+  "navSubscriptions": "Subscriptions",
+  "navDeliveryReport": "Delivery report",
+  "navConnectedCustomers": "Connected customers",
+  "navServiceRequests": "Service requests",
+  "navFarmApprovals": "Farm approvals",
+  "navLegacySuppliers": "Legacy suppliers",
+  "navAudit": "Audit",
+  "navOutstanding": "Outstanding",
+  "farmConsole": "Farm console",
+  "platformConsole": "Platform console",
+  "customerShellTitle": "My milk account",
+  "deliveryShellTitle": "Delivery round",
+  "settingsSubtitle": "Appearance and language preferences",
+  "datesToday": "Today",
+  "datesYesterday": "Yesterday",
+  "datesTomorrow": "Tomorrow",
+  "datesThisWeek": "This week",
+  "datesThisMonth": "This month",
+  "monday": "Monday",
+  "tuesday": "Tuesday",
+  "wednesday": "Wednesday",
+  "thursday": "Thursday",
+  "friday": "Friday",
+  "saturday": "Saturday",
+  "sunday": "Sunday",
+  "amounts": "Amounts",
+  "todaysAmount": "Today's",
+  "givenThisMonth": "Given this month",
+  "totalRemaining": "Total remaining",
+  "reportCashGiven": "Report cash given",
+  "reportCashDialogTitle": "Report cash given",
+  "photoProofRequired": "Photo proof is required (jpeg / png / webp).",
+  "cancel": "Cancel",
+  "submit": "Submit",
+  "addCashPhoto": "Add a photo of the cash payment.",
+  "cashClaimSubmitted": "Cash claim submitted. Waiting for staff confirmation.",
+  "desktopCameraHint": "Camera isn’t available on desktop — use Gallery to pick a photo.",
+  "pendingCashTitle": "Pending cash",
+  "confirm": "Confirm",
+  "reject": "Reject",
+  "noPendingCash": "No cash claims waiting for confirmation.",
+  "farmAajKiList": "Today's deliveries",
+  "farmDiya": "Mark delivered",
+  "farmPaisaLiya": "Record cash",
+  "farmCustomersTile": "Customers",
+  "farmSetupTile": "Farm setup",
+  "farmPaisaTitle": "Earnings",
+  "farmMadeToday": "Today",
+  "farmMadeWeek": "This week",
+  "farmMadeMonth": "This month",
+  "farmCollectedToday": "Today",
+  "farmCollectedWeek": "This week",
+  "farmCollectedMonth": "This month",
+  "farmToCollect": "Outstanding balance",
+  "farmMadeSection": "Milk earned",
+  "farmCollectedSection": "Cash collected",
+  "autoGenerateDailyList": "Auto-generate daily list",
+  "notGeneratedYet": "Not generated yet for this date",
+  "lastGenerated": "Last generated {when}",
+  "@lastGenerated": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "noDeliveryListYet": "No delivery list for this date yet",
+  "tapGenerateListHint": "Tap Generate list to create stops from your active customers.",
+  "noCustomersToDeliver": "No customers to deliver for this date.\nTap Generate list, or check Customers have active milk subscriptions.",
+  "createdSkippedSummary": "Created {created}; skipped {skipped}",
+  "@createdSkippedSummary": {
+    "placeholders": {
+      "created": {
+        "type": "String"
+      },
+      "skipped": {
+        "type": "String"
+      }
+    }
+  },
+  "noActiveCustomersDue": "No active customers due for this date. Check Customers / subscriptions.",
+  "notifiedCustomersSkipped": "Notified customers · skipped {n}",
+  "@notifiedCustomersSkipped": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "customersDontWantMilk": "{count} customer(s) don’t want milk on {day}",
+  "@customersDontWantMilk": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      },
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "customerDoesNotWantMilk": "Customer does not want milk this day",
+  "fullDayLabel": "Full day · {label}",
+  "@fullDayLabel": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "scheduleLabel": "Schedule · {label}",
+  "@scheduleLabel": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "deliveryCalendar": "Delivery calendar",
+  "noMilkOnDate": "No milk on {date}",
+  "@noMilkOnDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "wantMilkOnDate": "I want milk on {date}",
+  "@wantMilkOnDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "skipMilkConfirmTitle": "No milk this day?",
+  "skipMilkConfirmBody": "We’ll tell the farm to skip {date}. You won’t be charged for it.",
+  "@skipMilkConfirmBody": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "wantMilkConfirmTitle": "Want milk again?",
+  "wantMilkConfirmBody": "We’ll tell the farm you want milk on {date} again.",
+  "@wantMilkConfirmBody": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "skippedNoMilkDay": "Skipped — no milk this day",
+  "noDeliveryListedYet": "No delivery listed yet for this day.\nTap “No milk on …” above to tell the farm, or wait until the farm generates the list.",
+  "noDeliveriesOnDay": "No deliveries on this day.",
+  "yourDelivery": "Your delivery",
+  "selectDay": "Select day",
+  "lessThanUsualCharged": "Less than usual · charged for {qty}",
+  "@lessThanUsualCharged": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "todaysMilk": "TODAY'S MILK",
+  "todaysMilkDelivered": "TODAY'S MILK · Delivered ✓",
+  "todaysMilkYouSkipped": "TODAY'S MILK · You skipped",
+  "todayFarmNotDelivering": "TODAY · Farm not delivering",
+  "scheduledMilk": "Scheduled milk",
+  "totalDelivered": "Total delivered",
+  "edited": "Edited",
+  "customerStaffBreakdown": "Customer {customer} · Staff {staff}",
+  "@customerStaffBreakdown": {
+    "placeholders": {
+      "customer": {
+        "type": "String"
+      },
+      "staff": {
+        "type": "String"
+      }
+    }
+  },
+  "inboxSubtitleEmpty": "Invitations and your milk requests",
+  "inboxSubtitleCounts": "{requests} request(s) · {invitations} invitation(s) pending",
+  "@inboxSubtitleCounts": {
+    "placeholders": {
+      "requests": {
+        "type": "String"
+      },
+      "invitations": {
+        "type": "String"
+      }
+    }
+  },
+  "billsSubtitleEmpty": "Till-date balance & monthly bills",
+  "billsCount": "{count} bill(s)",
+  "@billsCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "farmNotDeliveringBody": "Your farm is not delivering milk today.",
+  "noMilkTodayBtn": "No milk today",
+  "skipping": "Skipping…",
+  "updating": "Updating…",
+  "generating": "Generating…",
+  "customerMilk": "Customer milk",
+  "thisDay": "This day · {date}",
+  "@thisDay": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "noMilkStopsCustomer": "No milk stops for this customer on this day.",
+  "tillDateThisMonth": "Till date (this month)",
+  "deliveredTillDate": "Delivered till date",
+  "extraTillDate": "Extra till date",
+  "pendingCash": "Pending cash",
+  "advance": "Advance",
+  "milkTillToday": "Milk till today",
+  "previousDues": "Previous dues",
+  "stillDue": "Still due",
+  "addAddress": "Add address",
+  "addAddressFirstForFarms": "Add a delivery address first so we can find farms that serve you.",
+  "searchNow": "Search now",
+  "anyFilter": "Any",
+  "notConnected": "Not connected",
+  "connectedWithTypes": "Connected · {types}",
+  "@connectedWithTypes": {
+    "placeholders": {
+      "types": {
+        "type": "String"
+      }
+    }
+  },
+  "servesYourPostalCode": "Serves your postal code",
+  "servesYourArea": "Serves your area",
+  "servesYourCity": "Serves your city",
+  "mixed": "Mixed",
+  "toned": "Toned",
+  "milkTypeOther": "Other",
+  "requestSentToFarm": "Request sent to the farm",
+  "enterLitres": "Enter litres",
+  "sending": "Sending…",
+  "saveChanges": "Save changes",
+  "sendRequest": "Send request",
+  "noReviewsYet": "No reviews yet",
+  "backToSearch": "Back to search",
+  "reviewsCount": "{count} reviews",
+  "@reviewsCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "maxQtyShort": "max {qty}",
+  "@maxQtyShort": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "tillTodayParen": "(till today)",
+  "billTillTodayLabel": "{label} · till today",
+  "@billTillTodayLabel": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "noFarmInvitationsYet": "No invitations from farms yet.\nYou can still find a farm and send a service request.",
+  "backToMilkList": "Back to milk list",
+  "openArrow": "Open →",
+  "secretDashboard": "Secret dashboard",
+  "editProfile": "Edit profile",
+  "deliverTo": "Deliver to",
+  "exactDeliveryPointSaved": "Exact delivery point saved",
+  "requestMilk": "Request milk",
+  "cancelExtra": "Cancel extra",
+  "deliver": "Deliver",
+  "route": "Route",
+  "runMode": "Run mode",
+  "collections": "Collections",
+  "history": "History",
+  "reviews": "Reviews",
+  "rate": "Rate",
+  "products": "Products",
+  "serviceAreas": "Service areas",
+  "invitations": "Invitations",
+  "staff": "Staff",
+  "requests": "Requests",
+  "connectedCustomers": "Connected customers",
+  "farmProfile": "Farm profile",
+  "dashboard": "Dashboard",
+  "home": "Home",
+  "welcome": "Welcome",
+  "login": "Login",
+  "passwordHint": "Password",
+  "showPassword": "Show password",
+  "hidePassword": "Hide password",
+  "notifOutForDeliveryTitle": "Out for delivery",
+  "notifOutForDeliveryBody": "Your milk is on the way.",
+  "notifMilkDeliveredTitle": "Milk delivered",
+  "notifMilkDeliveredBody": "Today’s milk has been delivered.",
+  "notifCustomerNoMilkTitle": "No milk today",
+  "notifCustomerNoMilkBody": "{name} does not want milk on {date}.",
+  "@notifCustomerNoMilkBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "notifCustomerWantsMilkTitle": "Wants milk again",
+  "notifCustomerWantsMilkBody": "{name} wants milk on {date} again.",
+  "@notifCustomerWantsMilkBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "notifFarmNoDeliveryTitle": "No delivery today",
+  "notifFarmNoDeliveryBody": "Your farm is not delivering milk on {date}.",
+  "@notifFarmNoDeliveryBody": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "notifCustomerConfirmedTitle": "Delivery confirmed",
+  "notifCustomerConfirmedBody": "Customer confirmed milk was received.",
+  "notifExtraRequestedTitle": "Extra milk requested",
+  "notifExtraAcceptedTitle": "Extra request accepted",
+  "notifExtraRejectedTitle": "Extra request rejected",
+  "notifCashRecordedTitle": "Cash payment recorded",
+  "notifCashConfirmedTitle": "Cash payment confirmed",
+  "notifCashRejectedTitle": "Cash payment rejected",
+  "notifRateUpdatedTitle": "Milk rate updated",
+  "notifServiceRequestCreatedTitle": "New milk request",
+  "notifServiceRequestAcceptedTitle": "Request accepted",
+  "notifServiceRequestCancelledTitle": "Request cancelled",
+  "notifGenericTitle": "Notification",
+  "extraMilkThisMonth": "Extra milk this month · {qty}",
+  "@extraMilkThisMonth": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "cashAwaitingConfirm": "Cash awaiting staff confirm · {amount}",
+  "@cashAwaitingConfirm": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "keep": "Keep",
+  "keepRequest": "Keep request",
+  "keepDeliveries": "Keep deliveries",
+  "clearAll": "Clear all",
+  "remove": "Remove",
+  "resend": "Resend",
+  "members": "Members",
+  "timeline": "Timeline",
+  "purpose": "Purpose",
+  "billPayment": "Bill payment",
+  "pdf": "PDF",
+  "phone": "Phone",
+  "photos": "Photos",
+  "addPhoto": "Add photo",
+  "changePhoto": "Change photo",
+  "profilePhotoUpdated": "Profile photo updated",
+  "farmName": "Farm name",
+  "businessName": "Business name",
+  "description": "Description",
+  "descriptionOptional": "Description (optional)",
+  "area": "Area",
+  "areaName": "Area name",
+  "addressLine1": "Address line 1",
+  "addressLine2": "Address line 2",
+  "nameOptional": "Name (optional)",
+  "customerNameOptional": "Customer name (optional)",
+  "commentOptional": "Comment (optional)",
+  "chooseAnyDay": "Choose any day",
+  "customRange": "Custom range",
+  "pickStartAndEndDates": "Pick start and end dates",
+  "getSetUp": "Get set up",
+  "farmApproved": "Farm approved",
+  "waitingPlatformApproval": "Waiting for platform approval",
+  "completeYourProfile": "Complete your profile",
+  "profileChecklistSubtitle": "Business name, description & email",
+  "addServiceArea": "Add a service area",
+  "soCustomersCanFindYou": "So customers can find you",
+  "addMilkProduct": "Add a milk product",
+  "setRateAndMinQty": "Set your rate & minimum quantity",
+  "customersToDeliverSubtitle": "Customers to deliver — mark as delivered",
+  "productsAreasProfile": "Products, areas & profile",
+  "nConnected": "{count} connected",
+  "@nConnected": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "flagForReview": "Flag for review",
+  "billUpdatedTillToday": "Bill updated for this month (till today)",
+  "farmProfileUpdated": "Farm profile updated",
+  "languagesUpdated": "Languages updated",
+  "maxFiveLanguages": "You can select up to 5 languages.",
+  "spokenLanguages": "Spoken languages",
+  "saveLanguages": "Save languages",
+  "addProductBeforeInvite": "Add an available product before inviting customers",
+  "proposedRatePerL": "Proposed rate (₹/L)",
+  "preferredStartDateYmd": "Preferred start date (YYYY-MM-DD)",
+  "preferredStartDate": "Preferred start date",
+  "deliveryInstructionsOptional": "Delivery instructions (optional)",
+  "noCustomerInvitationsYet": "No customer invitations yet.",
+  "startingDate": "Starting {date}",
+  "@startingDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "noDeliveriesAssignedToday": "No deliveries assigned today.",
+  "noDeliveriesInList": "No deliveries in this list.",
+  "noEditedDeliveriesToday": "No edited deliveries today.",
+  "noEditedDeliveriesForStaff": "No edited deliveries for this staff member.",
+  "noExtraMilkRecordedToday": "No extra milk recorded today.",
+  "deliveryPersonUpdated": "Delivery person updated",
+  "deliveryPerson": "Delivery person",
+  "noActiveSubscriptionYet": "No active subscription yet.",
+  "farmOwnerUnassigned": "Farm owner (me) / Unassigned",
+  "cow": "Cow",
+  "buffalo": "Buffalo",
+  "startDateYmd": "Start date (YYYY-MM-DD)",
+  "mobileLabel": "Mobile: {number}",
+  "@mobileLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "pinLabel": "PIN: {code}",
+  "@pinLabel": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "radiusKmLabel": "Radius: {km} km",
+  "@radiusKmLabel": {
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "activeYesNo": "Active: {value}",
+  "@activeYesNo": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "serviceRadiusKmOptional": "Service radius (km, optional)",
+  "noServiceAreasYet": "No service areas yet.",
+  "minimumQuantityL": "Minimum quantity (L)",
+  "maximumQuantityOptional": "Maximum quantity (optional)",
+  "availableShifts": "Available shifts",
+  "availableForNewCustomers": "Available for new customers",
+  "selectAtLeastOneShift": "Select at least one shift",
+  "marketRateTitle": "Market rate · {name}",
+  "@marketRateTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "rateUpdatedTo": "Rate updated to ₹{value}/L",
+  "@rateUpdatedTo": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "noProductsYet": "No products yet.",
+  "ratePerLitreValue": "Rate: ₹{value}/L",
+  "@ratePerLitreValue": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "changeTodaysRate": "Change today’s rate",
+  "deactivateStaff": "Deactivate staff",
+  "reactivateStaff": "Reactivate staff",
+  "removeStaff": "Remove staff",
+  "staffDeactivated": "Staff deactivated",
+  "staffRemoved": "Staff removed",
+  "staffStatus": "Staff status",
+  "reassignDeliveries": "Reassign deliveries",
+  "noStaffMembersYet": "No staff members yet.",
+  "noInvitationsSent": "No invitations sent.",
+  "submitReview": "Submit review",
+  "thanksForReview": "Thanks for your review",
+  "requestCancelled": "Request cancelled",
+  "editRequest": "Edit request",
+  "addAddressBeforeRequest": "Add a delivery address before requesting service",
+  "writeAReview": "Write a review",
+  "deliveryNotes": "Delivery notes",
+  "deliveryNotesHint": "Gate code, floor, preferred spot…",
+  "quantity": "Quantity",
+  "openMaps": "Open Maps",
+  "useCoordinates": "Use coordinates",
+  "enterValidLatLng": "Enter valid latitude and longitude.",
+  "setAsDefaultAddress": "Set as default address",
+  "setAsDefault": "Set as default",
+  "pasteFromMaps": "Paste from Maps",
+  "previewInMaps": "Preview in Maps",
+  "extraMilkRequestSent": "Extra milk request sent.",
+  "requestExtraMilk": "Request extra milk",
+  "extraQuantityLitres": "Extra quantity (litres)",
+  "myRequests": "My requests",
+  "noExtraMilkRequestsYet": "No extra milk requests yet.",
+  "updatedThanks": "Updated. Thanks!",
+  "reportAProblem": "Report a problem",
+  "whatWentWrong": "What went wrong?",
+  "describeIssueOptional": "Describe the issue (optional)",
+  "deliveryNotFound": "This delivery could not be found.",
+  "noUpdatesYet": "No updates yet.",
+  "thisMonthAndEarlier": "This month & earlier",
+  "couldNotOpenPhotoPicker": "Could not open photo picker: {error}",
+  "@couldNotOpenPhotoPicker": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "customerRequired": "Customer is required",
+  "frequency": "Frequency",
+  "daily": "Daily",
+  "alternateDays": "Alternate days",
+  "custom": "Custom",
+  "deliverySlot": "Delivery slot",
+  "quantityLitres": "Quantity (litres)",
+  "ratePerLitreInr": "Rate / litre (₹)",
+  "quickActions": "Quick actions",
+  "defaultRate": "Default rate",
+  "defaultRatePerLitre": "Default rate / litre (₹)",
+  "addSubscription": "Add subscription",
+  "recordPayment": "Record payment",
+  "notFound": "Not found",
+  "noCustomersYet": "No customers yet. Add your first milk customer.",
+  "noDeliveriesForTodayYet": "No deliveries for today yet.",
+  "deliveryHistory": "Delivery history",
+  "quantityColon": "Quantity: {value}",
+  "@quantityColon": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "amountColon": "Amount: {value}",
+  "@amountColon": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "statusColon": "Status: {value}",
+  "@statusColon": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "billCreated": "Bill {number} created",
+  "@billCreated": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "periodStart": "Period start",
+  "periodEnd": "Period end",
+  "billLines": "Lines: {count}",
+  "@billLines": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "subtotalLabel": "Subtotal: {amount}",
+  "@subtotalLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "noOutstandingDues": "No outstanding dues. Nice!",
+  "cash": "Cash",
+  "upi": "UPI",
+  "bankTransfer": "Bank transfer",
+  "rejectCashClaim": "Reject cash claim",
+  "paymentProof": "Payment proof",
+  "forgotPassword": "Forgot password",
+  "futureOtpSms": "Future: OTP via SMS",
+  "conflicts": "Conflicts",
+  "chooseVersionToKeep": "Choose which version to keep",
+  "local": "Local",
+  "remote": "Remote",
+  "noSyncConflicts": "No sync conflicts.",
+  "phase": "Phase",
+  "queue": "Queue",
+  "lastSynced": "Last synced",
+  "lastError": "Last error",
+  "syncNow": "Sync now",
+  "searchByDeliveryAddress": "Search by your delivery address",
+  "searchFarmsNearYou": "Search to see farms delivering near you.",
+  "noReviewsFromDairyYet": "No reviews from your dairy yet.",
+  "method": "Method",
+  "methodColon": "Method: {value}",
+  "@methodColon": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "couldNotStartApp": "Could not start the app",
+  "addDeliveryAddress": "Add delivery address",
+  "customersTodayCount": "{count} customer(s) today",
+  "@customersTodayCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "activate": "Activate",
+  "deactivate": "Deactivate",
+  "addresses": "Addresses",
+  "otpPasswordReset": "OTP password reset",
+  "smsOtpLaterRelease": "SMS OTP verification will land in a later release.",
+  "remainingLeft": "{count} left",
+  "@remainingLeft": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "hiGreeting": "Hi, {name}",
+  "@hiGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "thereFallback": "there",
+  "todayDotDate": "Today · {date}",
+  "@todayDotDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "noDeliveryScheduledOpenCalendar": "No delivery scheduled today · open calendar",
+  "couldNotLoadTodaysMilkRetry": "Could not load today’s milk. Tap to retry.\n{error}",
+  "@couldNotLoadTodaysMilkRetry": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "couldNotLoadBillRetry": "Could not load bill. Tap to retry.\n{error}",
+  "@couldNotLoadBillRetry": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "amountValue": "Amount {amount}",
+  "@amountValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "openDeliveryForExtraHint": "Open a specific delivery to request extra milk for that day.",
+  "forDate": "For {date}",
+  "@forDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "openExtraFromDeliveryEnable": "Open extra milk from a specific delivery to enable requesting.",
+  "noDeliveredMilkThisMonthYet": "No delivered milk this month yet — your bill will show here after the first delivery.",
+  "dueAmount": "Due {amount}",
+  "@dueAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "billMonthTillToday": "Bill · {month} (till today)",
+  "@billMonthTillToday": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "payAnytimeCarryForward": "Pay anytime this month · unpaid dues carry to next month",
+  "inboxPartialMissing": "Some inbox items may be missing. Pull to refresh.",
+  "inboxEmpty": "Nothing in your requests yet.\nFind a farm to request milk, or wait for a farm invitation.",
+  "expired": "Expired",
+  "invitationDeclined": "Invitation declined",
+  "invitedRelative": "Invited {when}",
+  "@invitedRelative": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "requestedRelative": "Requested {when}",
+  "@requestedRelative": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "firstDeliveryDateLabel": "First delivery {date}",
+  "@firstDeliveryDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "nextDeliveryDateLabel": "Next {date}",
+  "@nextDeliveryDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "everyDay": "Every day",
+  "onceAWeek": "Once a week",
+  "weekdays": "Weekdays",
+  "statusAccepted": "Accepted",
+  "invitation": "Invitation",
+  "startDateLabel": "Start {date}",
+  "@startDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "yourRequest": "Your request",
+  "noFarmsFoundSearch": "No farms found for this search.",
+  "tryDifferentMilkOrShift": "Try a different milk type or shift, or check back later.",
+  "productsCount": "{count} product(s)",
+  "@productsCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "rateThisFarm": "Rate this farm",
+  "statusPending": "Status: Pending",
+  "deliveryDetails": "Delivery details",
+  "howOften": "How often",
+  "weeklyUsesStartWeekday": "Weekly deliveries use the weekday of your start date.",
+  "rateMinQty": "₹{rate}/L · min {qty}",
+  "@rateMinQty": {
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      },
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "noCustomerReviewsYet": "No customer reviews yet.",
+  "pasteMapCoordinates": "Paste map coordinates",
+  "pasteMapsCoordsHint": "Open Maps, find your gate, then copy latitude and longitude here. No map API key needed.",
+  "usedWhenPlacingRequests": "Used when placing new milk requests",
+  "standAtGateMarkDrop": "Stand at your gate or door and mark the drop point so staff can open Maps there.",
+  "noMapPinYet": "No map pin yet — stand at the drop point and mark it",
+  "deactivateStaffBody": "They will not be able to log new deliveries or receive new assignments.",
+  "removeStaffBody": "Membership will be marked REMOVED. Historical deliveries still show this person.",
+  "dangerZone": "Danger zone",
+  "totalExtraDelivered": "Total Extra Delivered: {qty}",
+  "@totalExtraDelivered": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "extraMilkColon": "Extra Milk: {qty}",
+  "@extraMilkColon": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "customerRequestedColon": "Customer requested: {qty}",
+  "@customerRequestedColon": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "regularAndExtra": "Regular {scheduled}\nExtra {extra}",
+  "@regularAndExtra": {
+    "placeholders": {
+      "scheduled": {
+        "type": "String"
+      },
+      "extra": {
+        "type": "String"
+      }
+    }
+  },
+  "todaysRateAppliesHint": "Today’s rate applies to new milk stops and updates any not-yet-delivered stops for today.",
+  "minColon": "Min: {qty}",
+  "@minColon": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "shiftsColon": "Shifts: {shifts}",
+  "@shiftsColon": {
+    "placeholders": {
+      "shifts": {
+        "type": "String"
+      }
+    }
+  },
+  "availableColon": "Available: {value}",
+  "@availableColon": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "profilePercentComplete": "Profile {percent}% complete",
+  "@profilePercentComplete": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "milkMetricsUnavailable": "Milk metrics unavailable",
+  "stillToCollect": "Still to collect",
+  "outstandingBalanceHint": "Outstanding — delivered milk still unpaid, per customer. Another customer’s advance is not subtracted here.",
+  "advanceHeld": "Advance held",
+  "advanceHeldHint": "Extra cash already paid (credit). Shown separately — it does not cancel someone else’s due.",
+  "noAppAccountNeeded": "No app account needed — you manage their milk list.",
+  "customerAddedGenerateHint": "Customer added. Open Today’s deliveries and Generate if needed.",
+  "statusLifetimeDeliveries": "Status: {status} · Lifetime deliveries: {count}",
+  "@statusLifetimeDeliveries": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "editedThisWeek": "Edited this week: {count}",
+  "@editedThisWeek": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "noDeliveriesTodayGenerateHint": "No deliveries for today yet. Tap Generate list, or add customer subscriptions.",
+  "extraSetTapDiya": "Extra set to {qty}. Tap Diya to confirm what was delivered.",
+  "@extraSetTapDiya": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "pickSingleDayToCancel": "Pick a single day (Today / Tomorrow / Pick date) to cancel deliveries.",
+  "paidColon": "Paid: {date}",
+  "@paidColon": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "periodColon": "Period: {range}",
+  "@periodColon": {
+    "placeholders": {
+      "range": {
+        "type": "String"
+      }
+    }
+  },
+  "periodUnavailable": "Period unavailable",
+  "todayColonStats": "Today: {stats}",
+  "@todayColonStats": {
+    "placeholders": {
+      "stats": {
+        "type": "String"
+      }
+    }
+  },
+  "replacesStaffExtra": "Replaces current staff extra",
+  "couldNotLoadAddresses": "Could not load addresses",
+  "account": "Account",
+  "preparingPdf": "Preparing PDF…",
+  "invitationAccepted": "Invitation accepted",
+  "farmInvitation": "Farm invitation",
+  "requestUpdated": "Request updated",
+  "noMilkProductsAvailable": "No milk products are available from this farm right now.",
+  "requestPending": "Request Pending",
+  "updateExactPoint": "Update exact point",
+  "markExactDeliveryPoint": "Mark exact delivery point",
+  "editCustomer": "Edit customer",
+  "addCustomer": "Add customer",
+  "approvedRelative": "Approved {when}",
+  "@approvedRelative": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "startShort": "start {date}",
+  "@startShort": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "couldNotBuildTodayList": "Could not build today’s list. Tap Generate list.\n{error}",
+  "@couldNotBuildTodayList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "cantDeliverToCustomerTitle": "Can’t deliver to this customer?",
+  "cantDeliverNotifyBody": "We’ll notify {name} that milk won’t be delivered on {day}.",
+  "@cantDeliverNotifyBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "farmLabel": "Farm",
+  "viewShareBillPdf": "View / share bill PDF",
+  "contactAdminResetAccess": "For now, contact your Doodh Wala admin to reset access.",
+  "synced": "Synced",
+  "nPending": "{n} pending",
+  "@nPending": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "deleteAccount": "Delete account",
+  "deleteAccountConfirmTitle": "Delete your account?",
+  "deleteAccountConfirmMessage": "This permanently closes your Doodh Wala account and signs you out. Delivery and billing history may remain with farms for their records. This cannot be undone.",
+  "deleteAccountConfirmAction": "Delete account",
+  "accountDeleted": "Account deleted",
+  "disputed": "Disputed",
+  "regularExtraLine": "Regular {regular} · Extra {extra}",
+  "extraYouAndStaff": "(you {you} · staff {staff})",
+  "fromStaffSuffix": " · from staff",
+  "@regularExtraLine": {
+    "placeholders": {
+      "regular": {
+        "type": "String"
+      },
+      "extra": {
+        "type": "String"
+      }
+    }
+  },
+  "@extraYouAndStaff": {
+    "placeholders": {
+      "you": {
+        "type": "String"
+      },
+      "staff": {
+        "type": "String"
+      }
+    }
+  },
+  "farmStatusActive": "Active",
+  "farmStatusPendingApproval": "Pending approval",
+  "farmStatusSuspended": "Suspended",
+  "farmStatusRejected": "Rejected",
+  "farmStatusClosed": "Closed",
+  "farmStatusBlocked": "Blocked",
+  "farmPendingApprovalBanner": "Your farm is pending approval. You can keep setting up service areas and products — customers will see you once approved.",
+  "farmSuspendedBanner": "Your farm is currently suspended by the platform.",
+  "farmRejectedBanner": "Your farm application was rejected. Contact support for details.",
+  "farmClosedBanner": "This farm has been closed.",
+  "farmNotVisibleBanner": "This farm is not currently visible to customers."
+}

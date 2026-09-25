@@ -7,6 +7,7 @@ import '../../../../app/theme/app_theme.dart';
 import '../../../../core/formatters/indian_formatters.dart';
 import '../../../../core/widgets/dk_empty.dart';
 import '../providers/customer_providers.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class CustomersListScreen extends ConsumerWidget {
   const CustomersListScreen({super.key});
@@ -15,19 +16,19 @@ class CustomersListScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final customers = ref.watch(customersStreamProvider);
     return Scaffold(
-      backgroundColor: AppColors.cream,
-      appBar: AppBar(title: const Text('Customers')),
+      backgroundColor: Dk.of(context).cream,
+      appBar: AppBar(title: Text(AppLocalizations.of(context).customers)),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => context.push(AppRoutes.customerForm),
         icon: const Icon(Icons.person_add_alt_1),
-        label: const Text('Add'),
+        label: Text(AppLocalizations.of(context).add),
       ),
       body: customers.when(
         data: (list) {
           if (list.isEmpty) {
             return DkEmpty(
-              message: 'No customers yet. Add your first milk customer.',
-              actionLabel: 'Add customer',
+              message: AppLocalizations.of(context).noCustomersYet,
+              actionLabel: AppLocalizations.of(context).addCustomer,
               onAction: () => context.push(AppRoutes.customerForm),
             );
           }
@@ -38,7 +39,7 @@ class CustomersListScreen extends ConsumerWidget {
             itemBuilder: (context, i) {
               final c = list[i];
               return ListTile(
-                tileColor: AppColors.milkWhite,
+                tileColor: Dk.of(context).milkWhite,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),

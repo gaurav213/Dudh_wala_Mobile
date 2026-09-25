@@ -6,6 +6,7 @@ import '../../../../app/routes.dart';
 import '../../../../app/theme/app_theme.dart';
 import '../../../../core/formatters/indian_formatters.dart';
 import '../../../../core/widgets/dk_empty.dart';
+import '../../../../l10n/app_localizations.dart';
 import '../providers/billing_providers.dart';
 
 class OutstandingScreen extends ConsumerWidget {
@@ -13,14 +14,15 @@ class OutstandingScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     final outstanding = ref.watch(outstandingProvider);
     return Scaffold(
-      backgroundColor: AppColors.cream,
-      appBar: AppBar(title: const Text('Outstanding')),
+      backgroundColor: Dk.of(context).cream,
+      appBar: AppBar(title: Text(l10n.outstanding)),
       body: outstanding.when(
         data: (list) {
           if (list.isEmpty) {
-            return const DkEmpty(message: 'No outstanding dues. Nice!');
+            return DkEmpty(message: AppLocalizations.of(context).noOutstandingDues);
           }
           return ListView.separated(
             padding: const EdgeInsets.all(12),
@@ -29,15 +31,15 @@ class OutstandingScreen extends ConsumerWidget {
             itemBuilder: (context, i) {
               final b = list[i];
               return ListTile(
-                tileColor: AppColors.milkWhite,
+                tileColor: Dk.of(context).milkWhite,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
-                title: Text(b['customer_name'] as String? ?? 'Customer'),
+                title: Text(b['customer_name'] as String? ?? l10n.customer),
                 subtitle: Text(b['bill_number'] as String),
                 trailing: Text(
                   formatRupees(b['due'] as num),
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.w700,
                     color: AppColors.warning,
                   ),

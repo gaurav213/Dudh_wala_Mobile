@@ -238,6 +238,12 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     return _mapUser(rows.first);
   }
 
+  /// True when [table] has a row with primary key [id].
+  Future<bool> rowExists(String table, String id) async {
+    final rows = db.select('SELECT 1 AS ok FROM $table WHERE id = ? LIMIT 1', [id]);
+    return rows.isNotEmpty;
+  }
+
   Map<String, Object?> _mapUser(Map<String, Object?> r) => {
         'id': r['id'],
         'remote_id': r['remote_id'],
@@ -748,6 +754,7 @@ ORDER BY b.period_end
   // ── Payments ─────────────────────────────────────────────────
 
   Future<String> insertPayment({
+    String? id,
     required String customerId,
     String? billId,
     required double amount,
@@ -756,7 +763,7 @@ ORDER BY b.period_end
     String? notes,
   }) async {
     final now = DateTime.now();
-    final id = _uuid.v4();
+    final paymentId = id ?? _uuid.v4();
     db.execute(
       '''
 INSERT INTO payments
@@ -765,7 +772,7 @@ INSERT INTO payments
 VALUES (?, NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 ''',
       [
-        id,
+        paymentId,
         customerId,
         billId,
         amount,
@@ -801,7 +808,7 @@ WHERE id = ?
         ],
       );
     }
-    return id;
+    return paymentId;
   }
 
   Future<List<Map<String, Object?>>> listPayments({String? customerId}) async {

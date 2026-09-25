@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Exclude auth tokens / secure prefs from cloud backup & device transfer. -->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="sharedpref" path="FlutterSecureStorage" />
+        <exclude domain="sharedpref" path="flutter_secure_storage_library" />
+        <exclude domain="database" path="doodh_khata.db" />
+        <exclude domain="database" path="doodh_khata.sqlite" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="sharedpref" path="FlutterSecureStorage" />
+        <exclude domain="sharedpref" path="flutter_secure_storage_library" />
+        <exclude domain="database" path="doodh_khata.db" />
+        <exclude domain="database" path="doodh_khata.sqlite" />
+    </device-transfer>
+</data-extraction-rules>

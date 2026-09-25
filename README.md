@@ -1,8 +1,9 @@
-# Doodh Khata Mobile
+# Doodh Wala Mobile (`doodh_khata_mobile`)
 
-Offline-first Flutter MVP for the **Doodh Khata** milk delivery ledger (`doodh_khata_mobile`, org `com.doodhkhata`).
+Offline-first Flutter app for **Doodh Wala** — farms and customers on the milk delivery marketplace.
+Package id remains `doodh_khata_mobile` / `com.doodhkhata` for store continuity.
 
-Suppliers manage customers, subscriptions, daily deliveries, bills, and payments. Customers get a read-mostly view of calendar, history, bills, and payments.
+Farm owners manage profile, products, service areas, requests, and deliveries. Customers search farms, manage addresses, and track bills/payments.
 
 ## Prerequisites
 
@@ -71,7 +72,9 @@ Splash restores session → login / supplier register → role-based home (suppl
 |---------|----------|
 | Android emulator | `http://10.0.2.2:3000/api/v1` (maps to host loopback) |
 | iOS Simulator | `http://127.0.0.1:3000/api/v1` |
-| Physical device | `http://<your-lan-ip>:3000/api/v1` (phone and computer on same Wi‑Fi) |
+| Physical device | `http://<your-lan-ip>:3000/api/v1` (phone and computer on same Wi‑Fi / phone hotspot) |
+
+**Physical phone tip:** do **not** depend on the USB cable or `adb reverse`. Build once with your Mac LAN IP, or set **Settings → API base URL** on the phone. The URL is saved on device and keeps working after unplug. If your Mac IP changes, update that setting.
 
 Example:
 
@@ -101,8 +104,17 @@ flutter build apk --debug
 
 Release APK / Play App Bundle (configure signing first):
 
-1. Create a keystore (keep it out of git — see `.gitignore`).
-2. Add `android/key.properties` (not committed):
+1. **Generate a real upload keystore before releasing to the Play Store** —
+   do not ship the debug keystore:
+
+```bash
+keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA \
+  -keysize 2048 -validity 10000 -alias doodhkhata
+```
+
+Keep the `.jks` file and its passwords out of git — see `.gitignore`.
+
+2. Add `android/key.properties` (git-ignored, not committed):
 
 ```properties
 storePassword=...
@@ -111,13 +123,35 @@ keyAlias=doodhkhata
 storeFile=/absolute/path/to/upload-keystore.jks
 ```
 
-3. Wire `android/app/build.gradle` signingConfigs (Flutter template docs).
-4. Build:
+`android/app/build.gradle.kts` already reads this file and wires it into the
+`release` signing config automatically. If `key.properties` is missing, the
+release build type falls back to the debug keystore (so `flutter build
+apk/appbundle --release` still works without credentials locally/in CI) and
+prints a `WARNING:` line during the build — that output must be clean (no
+warning) before uploading a build to the Play Store.
+
+3. Build:
 
 ```bash
-flutter build apk --release
-flutter build appbundle --release
+# Local release smoke (may use debug signing if key.properties missing):
+flutter build appbundle --release \
+  --dart-define-from-file=dart_defines/production.json
+
+# Play Store upload (fails if key.properties missing):
+STORE_RELEASE=1 flutter build appbundle --release \
+  --dart-define-from-file=dart_defines/production.json
 ```
+
+Copy `dart_defines/production.json.example` → `dart_defines/production.json` and set a real **HTTPS** API URL first. See [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md).
+
+### iOS archive
+
+```bash
+flutter build ipa --release \
+  --dart-define-from-file=dart_defines/production.json
+```
+
+Then open Xcode → Product → Archive (distribution signing / Team required).
 
 ## Testing
 
@@ -146,7 +180,7 @@ Outdoor-friendly dairy palette (teal / leaf green / cream). Material 3 — not p
 
 - Flutter SDK was **not** installed when this tree was authored; run `scripts/bootstrap_platforms.sh` first.
 - Full Drift `@DriftDatabase` codegen is prepared via table classes; runtime uses `AppDatabase` SQL helpers.
-- Pull-sync mapping awaits a finalized backend contract (`GET /sync/pull`).
+- Pull-sync applies CUSTOMER/SUBSCRIPTION/DELIVERY/PAYMENT/USER changes locally; BILL/BILL_ITEM changes are not yet applied (see TODO in `SyncService._applyPulledEntity`) and full reconciliation of offline-created `LOCAL_ONLY` accounts against a finalized backend contract is still open.
 - OTP forgot-password is intentionally stubbed.
 - Notifications screen is a placeholder until FCM topics are wired.
 # Dudh_wala_Mobile

@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../app/theme/app_theme.dart';
 import '../../../../core/formatters/indian_formatters.dart';
+import '../../../../l10n/app_localizations.dart';
 import '../../../customers/presentation/providers/customer_providers.dart';
 import '../../domain/bill_preview.dart';
 import '../providers/billing_providers.dart';
@@ -43,8 +44,13 @@ class _GenerateBillScreenState extends ConsumerState<GenerateBillScreen> {
             periodEnd: _end,
           );
       setState(() => _preview = preview);
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text('$e')));
+      }
     } finally {
-      setState(() => _busy = false);
+      if (mounted) setState(() => _busy = false);
     }
   }
 
@@ -60,9 +66,14 @@ class _GenerateBillScreenState extends ConsumerState<GenerateBillScreen> {
           .generateFromPreview(preview, billNumber: number);
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Bill $number created')),
+          SnackBar(content: Text(AppLocalizations.of(context).billCreated('$number'))),
         );
         context.pop(id);
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text('$e')));
       }
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -71,17 +82,18 @@ class _GenerateBillScreenState extends ConsumerState<GenerateBillScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final customers = ref.watch(customersStreamProvider);
     return Scaffold(
-      backgroundColor: AppColors.cream,
-      appBar: AppBar(title: const Text('Generate bill')),
+      backgroundColor: Dk.of(context).cream,
+      appBar: AppBar(title: Text(l10n.generateBill)),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           customers.when(
             data: (list) => DropdownButtonFormField<String>(
               value: _customerId,
-              decoration: const InputDecoration(labelText: 'Customer'),
+              decoration: InputDecoration(labelText: l10n.customer),
               items: [
                 for (final c in list)
                   DropdownMenuItem(
@@ -96,7 +108,7 @@ class _GenerateBillScreenState extends ConsumerState<GenerateBillScreen> {
           ),
           const SizedBox(height: 12),
           ListTile(
-            title: const Text('Period start'),
+            title: Text(AppLocalizations.of(context).periodStart),
             subtitle: Text(formatDate(_start)),
             onTap: () async {
               final d = await showDatePicker(
@@ -109,7 +121,7 @@ class _GenerateBillScreenState extends ConsumerState<GenerateBillScreen> {
             },
           ),
           ListTile(
-            title: const Text('Period end'),
+            title: Text(AppLocalizations.of(context).periodEnd),
             subtitle: Text(formatDate(_end)),
             onTap: () async {
               final d = await showDatePicker(
@@ -124,17 +136,17 @@ class _GenerateBillScreenState extends ConsumerState<GenerateBillScreen> {
           const SizedBox(height: 8),
           OutlinedButton(
             onPressed: _busy ? null : _buildPreview,
-            child: const Text('Preview'),
+            child: Text(l10n.view),
           ),
           if (_preview != null) ...[
             const SizedBox(height: 16),
-            Text('Lines: ${_preview!.lines.length}'),
-            Text('Subtotal: ${formatRupees(_preview!.subtotal)}'),
-            Text('Total: ${formatRupees(_preview!.total)}'),
+            Text(AppLocalizations.of(context).billLines('${_preview!.lines.length}')),
+            Text(AppLocalizations.of(context).subtotalLabel(formatRupees(_preview!.subtotal))),
+            Text("${l10n.total}: ${formatRupees(_preview!.total)}"),
             const SizedBox(height: 12),
             FilledButton(
               onPressed: _busy ? null : _generate,
-              child: const Text('Create bill'),
+              child: Text(l10n.generateBill),
             ),
           ],
         ],

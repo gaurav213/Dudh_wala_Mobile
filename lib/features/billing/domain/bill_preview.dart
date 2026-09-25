@@ -35,8 +35,7 @@ class BillPreview {
   final double subtotal;
   final double adjustments;
 
-  double get total =>
-      DeliveryCalc.sumAmounts([subtotal, adjustments]);
+  double get total => DeliveryCalc.sumAmounts([subtotal, adjustments]);
 
   static BillPreview fromDeliveries({
     required String customerId,

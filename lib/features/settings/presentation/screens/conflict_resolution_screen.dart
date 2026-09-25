@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../app/theme/app_theme.dart';
 import '../../../../core/database/database_provider.dart';
 import '../../../../core/widgets/dk_empty.dart';
+import '../../../../l10n/app_localizations.dart';
 
 final _conflictsProvider =
     FutureProvider<List<Map<String, Object?>>>((ref) async {
@@ -17,12 +18,12 @@ class ConflictResolutionScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final conflicts = ref.watch(_conflictsProvider);
     return Scaffold(
-      backgroundColor: AppColors.cream,
-      appBar: AppBar(title: const Text('Conflicts')),
+      backgroundColor: Dk.of(context).cream,
+      appBar: AppBar(title: Text(AppLocalizations.of(context).conflicts)),
       body: conflicts.when(
         data: (rows) {
           if (rows.isEmpty) {
-            return const DkEmpty(message: 'No sync conflicts.');
+            return DkEmpty(message: AppLocalizations.of(context).noSyncConflicts);
           }
           return ListView.builder(
             itemCount: rows.length,
@@ -30,7 +31,7 @@ class ConflictResolutionScreen extends ConsumerWidget {
               final r = rows[i];
               return ListTile(
                 title: Text('${r['entity_type']} · ${r['entity_id']}'),
-                subtitle: const Text('Choose which version to keep'),
+                subtitle: Text(AppLocalizations.of(context).chooseVersionToKeep),
                 trailing: Wrap(
                   spacing: 4,
                   children: [
@@ -43,7 +44,7 @@ class ConflictResolutionScreen extends ConsumerWidget {
                             );
                         ref.invalidate(_conflictsProvider);
                       },
-                      child: const Text('Local'),
+                      child: Text(AppLocalizations.of(context).local),
                     ),
                     TextButton(
                       onPressed: () async {
@@ -54,7 +55,7 @@ class ConflictResolutionScreen extends ConsumerWidget {
                             );
                         ref.invalidate(_conflictsProvider);
                       },
-                      child: const Text('Remote'),
+                      child: Text(AppLocalizations.of(context).remote),
                     ),
                   ],
                 ),
