@@ -213,14 +213,6 @@ class _FarmTodayDeliveriesScreenState
             ),
           ),
         );
-      } else if (silent && mounted && created == 0 && skipped == 0) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              AppLocalizations.of(context).noDeliveriesTodayGenerateHint,
-            ),
-          ),
-        );
       }
       return true;
     } catch (e) {

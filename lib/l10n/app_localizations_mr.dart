@@ -1358,6 +1358,16 @@ class AppLocalizationsMr extends AppLocalizations {
   String get areaName => 'परिसराचे नाव';
 
   @override
+  String get pickCurrentAddress => 'माझा सध्याचा पत्ता घ्या';
+
+  @override
+  String get findingAddress => 'पत्ता शोधत आहोत…';
+
+  @override
+  String get couldNotReadAddress =>
+      'पत्ता सापडला नाही. तुम्ही स्वतः लिहू शकता आणि कोणतेही क्षेत्र बदलू शकता.';
+
+  @override
   String get addressLine1 => 'पत्ता ओळ 1';
 
   @override
@@ -1383,6 +1393,16 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get getSetUp => 'सेटअप पूर्ण करा';
+
+  @override
+  String get farmSetupUntilLive =>
+      'ग्राहक तुमचा फार्म शोधून दूध मागतील तेव्हाच जेव्हा हे टप्पे पूर्ण होतील. क्रमाने करा.';
+
+  @override
+  String get farmSetupAddPhotos => 'फार्मचे फोटो जोडा';
+
+  @override
+  String get farmSetupAddPhotosHint => 'ऐच्छिक — ग्राहकांचा विश्वास वाढतो';
 
   @override
   String get farmApproved => 'फार्म मंजूर';

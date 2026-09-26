@@ -1360,6 +1360,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get areaName => 'Area name';
 
   @override
+  String get pickCurrentAddress => 'Use my current address';
+
+  @override
+  String get findingAddress => 'Finding your address…';
+
+  @override
+  String get couldNotReadAddress =>
+      'Could not read your address. You can type it and change any field.';
+
+  @override
   String get addressLine1 => 'Address line 1';
 
   @override
@@ -1385,6 +1395,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get getSetUp => 'Get set up';
+
+  @override
+  String get farmSetupUntilLive =>
+      'Customers can find your farm and request milk only after these steps. Do them in order.';
+
+  @override
+  String get farmSetupAddPhotos => 'Add farm photos';
+
+  @override
+  String get farmSetupAddPhotosHint =>
+      'Optional — helps customers trust your farm';
 
   @override
   String get farmApproved => 'Farm approved';

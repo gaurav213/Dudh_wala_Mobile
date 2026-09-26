@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../app/branding/brand_logo.dart';
 import '../../../../app/theme/app_theme.dart';
+import '../../../../core/utils/location_helpers.dart';
+import '../../../../core/utils/reverse_geocode.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../providers/auth_provider.dart';
 import '../providers/login_validators.dart';
@@ -28,6 +30,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
   final _state = TextEditingController();
   final _postal = TextEditingController();
   bool _submitting = false;
+  bool _locating = false;
 
   @override
   void dispose() {
@@ -42,6 +45,36 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
     _state.dispose();
     _postal.dispose();
     super.dispose();
+  }
+
+  Future<void> _pickCurrentAddress() async {
+    if (_locating || _submitting) return;
+    setState(() => _locating = true);
+    try {
+      final pos = await LocationHelpers.currentPosition(throwOnError: true);
+      if (pos == null) throw Exception(AppLocalizations.of(context).couldNotReadAddress);
+      final picked = await reverseGeocode(
+        latitude: pos.latitude,
+        longitude: pos.longitude,
+      );
+      if (!picked.hasAnything) {
+        throw Exception(AppLocalizations.of(context).couldNotReadAddress);
+      }
+      if (picked.line1 != null) _address.text = picked.line1!;
+      if (picked.area != null) _area.text = picked.area!;
+      if (picked.city != null) _city.text = picked.city!;
+      if (picked.state != null) _state.text = picked.state!;
+      if (picked.postalCode != null) _postal.text = picked.postalCode!;
+      if (mounted) setState(() {});
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('$e')),
+        );
+      }
+    } finally {
+      if (mounted) setState(() => _locating = false);
+    }
   }
 
   Future<void> _submit() async {
@@ -134,6 +167,25 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                   ),
                 ),
                 const SizedBox(height: 12),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: OutlinedButton.icon(
+                    onPressed: _locating || _submitting
+                        ? null
+                        : _pickCurrentAddress,
+                    icon: _locating
+                        ? const SizedBox(
+                            width: 16,
+                            height: 16,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          )
+                        : const Icon(Icons.my_location),
+                    label: Text(
+                      _locating ? l10n.findingAddress : l10n.pickCurrentAddress,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 12),
                 TextFormField(
                   controller: _address,
                   decoration: InputDecoration(labelText: l10n.address),
@@ -143,7 +195,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                 const SizedBox(height: 12),
                 TextFormField(
                   controller: _area,
-                  decoration: InputDecoration(labelText: l10n.address),
+                  decoration: InputDecoration(labelText: l10n.areaName),
                   validator: (v) =>
                       (v ?? '').trim().isEmpty ? l10n.fieldRequired : null,
                 ),
@@ -170,7 +222,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                 ),
                 const SizedBox(height: 24),
                 FilledButton(
-                  onPressed: _submitting ? null : _submit,
+                  onPressed: _submitting || _locating ? null : _submit,
                   child: Text(
                     _submitting ? l10n.registering : l10n.createAccount,
                   ),

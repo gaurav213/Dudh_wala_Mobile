@@ -10,6 +10,12 @@ import '../../domain/repositories/auth_repository.dart';
 import '../models/auth_dto.dart';
 import '../remote/auth_remote_source.dart';
 
+/// Only a rejected refresh token should wipe the session.
+bool shouldDropSessionAfterRefreshError(Object error) {
+  return error is AuthException &&
+      (error.code == '401' || error.code == '403');
+}
+
 class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl({
     required AppDatabase db,
@@ -56,11 +62,23 @@ class AuthRepositoryImpl implements AuthRepository {
         refresh != 'local-refresh' &&
         JwtUtils.isExpiredOrExpiring(access)) {
       final ok = await refreshSession();
-      if (!ok) return null;
+      // Network / timeout must not look like logout — tokens are still valid.
+      if (!ok && !await _tokens.hasSession()) return null;
     }
 
+    final cached = await restoreCachedUser();
+    if (cached != null) return cached;
+    return _profileFromTokens();
+  }
+
+  @override
+  Future<UserEntity?> restoreCachedUser() async {
+    if (!await _tokens.hasSession()) return null;
     final row = await _db.getAppUser();
-    if (row != null) return UserEntity.fromMap(row);
+    return row == null ? null : UserEntity.fromMap(row);
+  }
+
+  Future<UserEntity?> _profileFromTokens() async {
 
     // Tokens exist but local user row missing (e.g. reinstall kept keychain).
     try {
@@ -68,8 +86,10 @@ class AuthRepositoryImpl implements AuthRepository {
       final user = _userFromDto(profile);
       await _db.upsertAppUser(user.toMap());
       return user;
+    } on AuthException catch (e) {
+      if (shouldDropSessionAfterRefreshError(e)) await _tokens.clear();
+      return null;
     } catch (_) {
-      await _tokens.clear();
       return null;
     }
   }
@@ -223,8 +243,12 @@ class AuthRepositoryImpl implements AuthRepository {
         await _db.upsertAppUser(_userFromDto(dto.user!).toMap());
       }
       return true;
+    } on AuthException catch (e) {
+      if (shouldDropSessionAfterRefreshError(e)) {
+        await _tokens.clear();
+      }
+      return false;
     } catch (_) {
-      await _tokens.clear();
       return false;
     }
   }

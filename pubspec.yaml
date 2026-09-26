@@ -1,7 +1,7 @@
 name: doodh_khata_mobile
 description: Doodh Wala — offline-first milk delivery marketplace for farms and customers.
 publish_to: "none"
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: ">=3.5.0 <4.0.0"

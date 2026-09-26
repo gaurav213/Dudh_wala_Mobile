@@ -279,6 +279,12 @@ class _DashboardBody extends StatelessWidget {
           const SizedBox(height: 16),
           _PendingApprovalBanner(status: farm.status),
         ],
+        if (!checklist.isApproved ||
+            !checklist.hasServiceArea ||
+            !checklist.hasProduct) ...[
+          const SizedBox(height: 16),
+          _FarmSetupGuide(checklist: checklist),
+        ],
         const SizedBox(height: 20),
         Text(l10n.farmPaisaTitle,
             style: Theme.of(context).textTheme.titleMedium),
@@ -391,42 +397,6 @@ class _DashboardBody extends StatelessWidget {
           color: Dk.of(context).muted,
           onTap: () => context.push(AppRoutes.farmProfile),
         ),
-        if (!checklist.isApproved ||
-            !checklist.profileComplete ||
-            !checklist.hasServiceArea ||
-            !checklist.hasProduct) ...[
-          const SizedBox(height: 24),
-          Text(AppLocalizations.of(context).getSetUp, style: Theme.of(context).textTheme.titleMedium),
-          const SizedBox(height: 8),
-          if (!checklist.isApproved)
-            _ChecklistTile(
-              done: false,
-              title: AppLocalizations.of(context).farmApproved,
-              subtitle: AppLocalizations.of(context).waitingPlatformApproval,
-              onTap: () => context.push(AppRoutes.farmProfile),
-            ),
-          if (!checklist.profileComplete)
-            _ChecklistTile(
-              done: false,
-              title: AppLocalizations.of(context).completeYourProfile,
-              subtitle: AppLocalizations.of(context).profileChecklistSubtitle,
-              onTap: () => context.push(AppRoutes.farmProfile),
-            ),
-          if (!checklist.hasServiceArea)
-            _ChecklistTile(
-              done: false,
-              title: AppLocalizations.of(context).addServiceArea,
-              subtitle: AppLocalizations.of(context).soCustomersCanFindYou,
-              onTap: () => context.push(AppRoutes.farmServiceAreas),
-            ),
-          if (!checklist.hasProduct)
-            _ChecklistTile(
-              done: false,
-              title: AppLocalizations.of(context).addMilkProduct,
-              subtitle: AppLocalizations.of(context).setRateAndMinQty,
-              onTap: () => context.push(AppRoutes.farmProducts),
-            ),
-        ],
         const SizedBox(height: 12),
       ],
     );
@@ -896,6 +866,78 @@ class _PendingApprovalBanner extends StatelessWidget {
           const Icon(Icons.info_outline, color: AppColors.warning),
           const SizedBox(width: 10),
           Expanded(child: Text(message)),
+        ],
+      ),
+    );
+  }
+}
+
+class _FarmSetupGuide extends StatelessWidget {
+  const _FarmSetupGuide({required this.checklist});
+
+  final FarmOnboardingChecklist checklist;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    return Container(
+      padding: const EdgeInsets.fromLTRB(14, 14, 14, 8),
+      decoration: BoxDecoration(
+        color: Dk.of(context).milkWhite,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(
+          color: AppColors.leaf.withValues(alpha: 0.28),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            l10n.getSetUp,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.w800,
+                ),
+          ),
+          const SizedBox(height: 6),
+          Text(
+            l10n.farmSetupUntilLive,
+            style: TextStyle(
+              color: Dk.of(context).muted,
+              height: 1.35,
+            ),
+          ),
+          const SizedBox(height: 10),
+          _ChecklistTile(
+            done: checklist.profileComplete,
+            title: '1. ${l10n.completeYourProfile}',
+            subtitle: l10n.profileChecklistSubtitle,
+            onTap: () => context.push(AppRoutes.farmProfile),
+          ),
+          _ChecklistTile(
+            done: false,
+            title: '2. ${l10n.farmSetupAddPhotos}',
+            subtitle: l10n.farmSetupAddPhotosHint,
+            onTap: () => context.push(AppRoutes.farmProfile),
+          ),
+          _ChecklistTile(
+            done: checklist.hasServiceArea,
+            title: '3. ${l10n.addServiceArea}',
+            subtitle: l10n.soCustomersCanFindYou,
+            onTap: () => context.push(AppRoutes.farmServiceAreas),
+          ),
+          _ChecklistTile(
+            done: checklist.hasProduct,
+            title: '4. ${l10n.addMilkProduct}',
+            subtitle: l10n.setRateAndMinQty,
+            onTap: () => context.push(AppRoutes.farmProducts),
+          ),
+          if (!checklist.isApproved)
+            _ChecklistTile(
+              done: false,
+              title: '5. ${l10n.farmApproved}',
+              subtitle: l10n.waitingPlatformApproval,
+              onTap: () => context.push(AppRoutes.farmProfile),
+            ),
         ],
       ),
     );

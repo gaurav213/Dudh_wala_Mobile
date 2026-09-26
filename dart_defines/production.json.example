@@ -1,5 +1,5 @@
 {
   "APP_ENV": "production",
-  "API_BASE_URL": "https://REPLACE_WITH_PRODUCTION_API_HOST/api/v1",
+  "API_BASE_URL": "https://dudh-wala-backend.onrender.com/api/v1",
   "ENABLE_API_LOGS": "false"
 }

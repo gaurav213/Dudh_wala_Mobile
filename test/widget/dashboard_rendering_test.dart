@@ -107,6 +107,12 @@ class _NoopRepo implements AuthRepository {
 
   @override
   Future<UserEntity?> restoreSession() async => null;
+
+  @override
+  Future<UserEntity?> restoreCachedUser() async => null;
+
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
 
 class _FakeSyncService implements SyncService {

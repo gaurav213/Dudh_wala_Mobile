@@ -2680,6 +2680,24 @@ abstract class AppLocalizations {
   /// **'Area name'**
   String get areaName;
 
+  /// No description provided for @pickCurrentAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Use my current address'**
+  String get pickCurrentAddress;
+
+  /// No description provided for @findingAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Finding your address…'**
+  String get findingAddress;
+
+  /// No description provided for @couldNotReadAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not read your address. You can type it and change any field.'**
+  String get couldNotReadAddress;
+
   /// No description provided for @addressLine1.
   ///
   /// In en, this message translates to:
@@ -2733,6 +2751,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Get set up'**
   String get getSetUp;
+
+  /// No description provided for @farmSetupUntilLive.
+  ///
+  /// In en, this message translates to:
+  /// **'Customers can find your farm and request milk only after these steps. Do them in order.'**
+  String get farmSetupUntilLive;
+
+  /// No description provided for @farmSetupAddPhotos.
+  ///
+  /// In en, this message translates to:
+  /// **'Add farm photos'**
+  String get farmSetupAddPhotos;
+
+  /// No description provided for @farmSetupAddPhotosHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional — helps customers trust your farm'**
+  String get farmSetupAddPhotosHint;
 
   /// No description provided for @farmApproved.
   ///

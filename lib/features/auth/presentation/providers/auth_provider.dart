@@ -70,8 +70,8 @@ class AuthController extends StateNotifier<AuthState> {
       // Secure storage can be slow on desktop; allow enough time for restore +
       // a quiet refresh when the access token has expired.
       final user = await _repo.restoreSession().timeout(
-            const Duration(seconds: 12),
-            onTimeout: () => null,
+            const Duration(seconds: 30),
+            onTimeout: () => _repo.restoreCachedUser(),
           );
       state = AuthState(user: user, initialized: true);
     } catch (e) {

@@ -31,6 +31,7 @@ class _FarmProfileScreenState extends ConsumerState<FarmProfileScreen> {
 
   bool _editing = false;
   bool _saving = false;
+  bool _photoBusy = false;
   String? _loadedFarmId;
   List<String> _spokenLanguages = [];
 
@@ -196,7 +197,7 @@ class _FarmProfileScreenState extends ConsumerState<FarmProfileScreen> {
                   ),
                 if (photos.length < 5)
                   InkWell(
-                    onTap: () => _addPhoto(farm.id),
+                    onTap: _photoBusy ? null : () => _addPhoto(farm.id),
                     borderRadius: BorderRadius.circular(12),
                     child: Container(
                       width: 112,
@@ -208,21 +209,25 @@ class _FarmProfileScreenState extends ConsumerState<FarmProfileScreen> {
                           color: Dk.of(context).muted.withValues(alpha: 0.3),
                         ),
                       ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.add_a_photo_outlined,
-                              color: AppColors.leaf),
-                          const SizedBox(height: 4),
-                          Text(
-                            photos.isEmpty ? AppLocalizations.of(context).addPhoto : '${photos.length}/5',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Dk.of(context).muted,
+                      child: _photoBusy
+                          ? const Center(child: CircularProgressIndicator())
+                          : Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.add_a_photo_outlined,
+                                    color: AppColors.leaf),
+                                const SizedBox(height: 4),
+                                Text(
+                                  photos.isEmpty
+                                      ? AppLocalizations.of(context).addPhoto
+                                      : '${photos.length}/5',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Dk.of(context).muted,
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                        ],
-                      ),
                     ),
                   ),
               ],
@@ -328,32 +333,46 @@ class _FarmProfileScreenState extends ConsumerState<FarmProfileScreen> {
   }
 
   Future<void> _addPhoto(String farmId) async {
+    if (_photoBusy) return;
     final picked = await ImagePicker().pickImage(
       source: ImageSource.gallery,
       imageQuality: 85,
       maxWidth: 1600,
     );
     if (picked == null) return;
+    setState(() => _photoBusy = true);
     try {
       await ref.read(farmApiProvider).uploadMedia(farmId, picked.path);
       ref.invalidate(farmMediaProvider(farmId));
+      try {
+        await ref.read(farmMediaProvider(farmId).future);
+      } catch (_) {}
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text('$e')));
       }
+    } finally {
+      if (mounted) setState(() => _photoBusy = false);
     }
   }
 
   Future<void> _deletePhoto(String farmId, String mediaId) async {
+    if (_photoBusy) return;
+    setState(() => _photoBusy = true);
     try {
       await ref.read(farmApiProvider).deleteMedia(farmId, mediaId);
       ref.invalidate(farmMediaProvider(farmId));
+      try {
+        await ref.read(farmMediaProvider(farmId).future);
+      } catch (_) {}
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text('$e')));
       }
+    } finally {
+      if (mounted) setState(() => _photoBusy = false);
     }
   }
 

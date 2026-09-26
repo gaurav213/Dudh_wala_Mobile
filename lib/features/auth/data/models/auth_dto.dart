@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../../../../core/utils/json_parsing.dart';
+
 part 'auth_dto.g.dart';
 
 @JsonSerializable()
@@ -82,8 +84,16 @@ class AuthTokensDto {
   final String refreshToken;
   final AuthUserDto? user;
 
-  factory AuthTokensDto.fromJson(Map<String, dynamic> json) =>
-      _$AuthTokensDtoFromJson(json);
+  factory AuthTokensDto.fromJson(Map<String, dynamic> json) {
+    final userRaw = json['user'];
+    return AuthTokensDto(
+      accessToken: asStringOr(json['accessToken']),
+      refreshToken: asStringOr(json['refreshToken']),
+      user: userRaw is Map<String, dynamic>
+          ? AuthUserDto.fromJson(userRaw)
+          : null,
+    );
+  }
   Map<String, dynamic> toJson() => _$AuthTokensDtoToJson(this);
 }
 
@@ -105,7 +115,15 @@ class AuthUserDto {
   final String? email;
   final String? avatarUrl;
 
-  factory AuthUserDto.fromJson(Map<String, dynamic> json) =>
-      _$AuthUserDtoFromJson(json);
+  factory AuthUserDto.fromJson(Map<String, dynamic> json) => AuthUserDto(
+        id: asStringOr(json['id'] ?? json['userId']),
+        name: asStringOr(json['name'], 'User'),
+        mobileNumber: asStringOr(
+          json['mobileNumber'] ?? json['mobile_number'],
+        ),
+        role: asStringOr(json['role'], 'CUSTOMER'),
+        email: asStringOrNull(json['email']),
+        avatarUrl: asStringOrNull(json['avatarUrl'] ?? json['avatar_url']),
+      );
   Map<String, dynamic> toJson() => _$AuthUserDtoToJson(this);
 }

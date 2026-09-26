@@ -163,6 +163,97 @@ class _CustomerFarmDetailScreenState
     return matches.first;
   }
 
+  void _startRequest(
+    FarmProductModel product,
+    List<ServiceRequestModel> requests,
+  ) {
+    final match = _activeRequestFor(product, requests);
+    if (match == null) {
+      _openRequestDialog(product);
+      return;
+    }
+    if (match.isPending) {
+      _openPendingActions(product, match);
+    }
+  }
+
+  Future<void> _requestMilkFromFarm(List<ServiceRequestModel> requests) async {
+    final products = _products;
+    if (products.isEmpty) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(AppLocalizations.of(context).noMilkProductsAvailable),
+        ),
+      );
+      return;
+    }
+
+    final open = products
+        .where((p) => _activeRequestFor(p, requests) == null)
+        .toList();
+    if (open.length == 1) {
+      await _openRequestDialog(open.first);
+      return;
+    }
+    if (open.length > 1) {
+      if (!mounted) return;
+      final picked = await showModalBottomSheet<FarmProductModel>(
+        context: context,
+        backgroundColor: Dk.of(context).milkWhite,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+        ),
+        builder: (ctx) {
+          final l10n = AppLocalizations.of(context);
+          return SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(8, 12, 8, 16),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(12, 4, 12, 8),
+                    child: Text(
+                      l10n.requestMilk,
+                      style: Theme.of(ctx).textTheme.titleMedium?.copyWith(
+                            fontWeight: FontWeight.w800,
+                          ),
+                    ),
+                  ),
+                  ...open.map(
+                    (p) => ListTile(
+                      leading: const Icon(
+                        Icons.water_drop,
+                        color: AppColors.teal,
+                      ),
+                      title: Text(p.name),
+                      subtitle: Text(
+                        "${localizedMilkType(l10n, p.milkType)} · ${l10n.rateMinQty(p.currentRatePerLitre, formatLitresString(p.minimumQuantity))}",
+                      ),
+                      onTap: () => Navigator.of(ctx).pop(p),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      );
+      if (picked != null && mounted) await _openRequestDialog(picked);
+      return;
+    }
+
+    for (final product in products) {
+      final match = _activeRequestFor(product, requests);
+      if (match != null && match.isPending) {
+        _openPendingActions(product, match);
+        return;
+      }
+    }
+  }
+
   Future<void> _confirmCancelRequest(ServiceRequestModel request) async {
     final ok = await showDialog<bool>(
       context: context,
@@ -1101,9 +1192,15 @@ class _CustomerFarmDetailScreenState
                               style: TextStyle(color: Dk.of(context).muted),
                             ),
                             trailing: match == null
-                                ? Icon(
-                                    Icons.chevron_right,
-                                    color: Dk.of(context).muted,
+                                ? FilledButton(
+                                    style: FilledButton.styleFrom(
+                                      visualDensity: VisualDensity.compact,
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 12,
+                                      ),
+                                    ),
+                                    onPressed: () => _openRequestDialog(p),
+                                    child: Text(l10n.requestMilk),
                                   )
                                 : Chip(
                                     label: Text(
@@ -1124,34 +1221,32 @@ class _CustomerFarmDetailScreenState
                                     visualDensity: VisualDensity.compact,
                                     side: BorderSide.none,
                                   ),
-                            onTap: () {
-                              if (match == null) {
-                                _openRequestDialog(p);
-                              } else if (match.isPending) {
-                                _openPendingActions(p, match);
-                              } else {
-                                context.push(
-                                  '${AppRoutes.customerRequests}?focus=${match.id}',
-                                );
-                              }
-                            },
+                            onTap: () => _startRequest(p, requests),
                           ),
                         );
                       }),
                     const SizedBox(height: 12),
-                    OutlinedButton.icon(
-                      onPressed: () {
-                        if (farmRequests.length == 1) {
-                          context.push(
-                            '${AppRoutes.customerRequests}?focus=${farmRequests.first.id}',
-                          );
-                        } else {
-                          context.push(AppRoutes.customerRequests);
-                        }
-                      },
-                      icon: const Icon(Icons.inbox_outlined),
-                      label: Text(l10n.requests),
+                    FilledButton.icon(
+                      onPressed: () => _requestMilkFromFarm(requests),
+                      icon: const Icon(Icons.send_outlined),
+                      label: Text(l10n.requestMilk),
                     ),
+                    if (farmRequests.isNotEmpty) ...[
+                      const SizedBox(height: 4),
+                      TextButton.icon(
+                        onPressed: () {
+                          if (farmRequests.length == 1) {
+                            context.push(
+                              '${AppRoutes.customerRequests}?focus=${farmRequests.first.id}',
+                            );
+                          } else {
+                            context.push(AppRoutes.customerRequests);
+                          }
+                        },
+                        icon: const Icon(Icons.inbox_outlined),
+                        label: Text(l10n.myRequests),
+                      ),
+                    ],
                     const SizedBox(height: 16),
                     Text(
                       l10n.reviews,

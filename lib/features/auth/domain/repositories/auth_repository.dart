@@ -2,6 +2,9 @@ import '../entities/user_entity.dart';
 
 abstract class AuthRepository {
   Future<UserEntity?> restoreSession();
+
+  /// Local user row only — no network. Used when splash refresh times out.
+  Future<UserEntity?> restoreCachedUser();
   Future<UserEntity> login({required String phone, required String password});
   Future<UserEntity> registerFarmOwner({
     required String name,

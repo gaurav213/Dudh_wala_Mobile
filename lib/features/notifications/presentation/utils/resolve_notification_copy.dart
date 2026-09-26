@@ -31,8 +31,8 @@ import '../../data/notification_catalogs.dart';
     return (title: title, body: body);
   }
   return (
-    title: _interpolate(entry['title']!, params),
-    body: _interpolate(entry['body']!, params),
+    title: _interpolate(entry['title'] ?? title, params),
+    body: _interpolate(entry['body'] ?? body, params),
   );
 }
 
